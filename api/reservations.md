@@ -186,24 +186,8 @@
     example:
     $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d reservation[status]=prospect https://beyondvip.com/api/v1/reservations/259.json
 
-### Available statuses
-    url: /api/v1/reservations/available_statuses(.:format)
-    format: json
-    method: GET
-    in:
-      auth_token: string,
-      reservation_id: integer // optional. Statuses for new reservation returned if not set.
-    out: {
-      "lead": "Lead",
-      "prospect": "Prospect",
-      ...
-    }
-
-    example:
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/reservations/available_statuses.json
-
 #### [**Get Staff**](/docs/api/users.md)
-#### [**Create/Edit Notes**](/docs/api/notes.md)
+#### [**Edit Notes**](/docs/api/notes.md)
 
 ### Examples
 
