@@ -186,8 +186,8 @@
     example:
     $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d reservation[status]=prospect https://beyondvip.com/api/v1/reservations/259.json
 
-#### [**Get Staff**](/docs/api/users.md)
-#### [**Edit Notes**](/docs/api/notes.md)
+#### [**Get Staff**](/api/users.md)
+#### [**Edit Notes**](/api/notes.md)
 
 ### Examples
 
