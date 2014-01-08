@@ -1,0 +1,319 @@
+# Api::V1::Events
+#### {artist#HASH}
+    {
+      "id": integer,
+      "status": string,
+      "name": string,
+      "avatar_url": string
+    }
+
+#### {general_admission_entrance_type#HASH}
+    {
+      "id": integer,
+      "male_price": float,
+      "female_price": float,
+      "title": string
+    }
+
+#### {section#HASH}
+    {
+      "id": integer,
+      "name": string,
+      "available_places": integer,
+      "total_places": integer,
+      "color": string,
+      "reservation_room_id": integer,
+      "minimum": float,
+      "description": string
+    }
+
+#### {table#HASH}
+    {
+      "capacity": integer,
+      "id": integer,
+      "name": string,
+      "reservation_section_id": integer,
+      "shape": string,
+      "size": string,
+      "coordinates": {
+        "x": float,
+        "y": float
+      }
+    }
+
+#### {guestlist_type#HASH}
+    {
+      "id": integer,
+      "name": string,
+      "price_per_person": float,
+      "person_count": integer,
+      "gender_type": "male",
+      "default": boolean,
+      "guestlist_template_id": integer
+    }
+
+#### {event#HASH}
+    {
+      id: integer,
+      venue_id: integer,
+      name: string,
+      date: datetime,
+      location: string,
+      dress_code: string,
+      age: string,
+      description: text,
+      poster: string
+    }
+
+#### {event_details#HASH}
+    {
+      "id": integer,
+      "venue_id": integer,
+      "name": string,
+      "date": timestamp,
+      "location": string,
+      "dress_code": string,
+      "age": string,
+      "description": string,
+      "poster_url": string,
+      "poster_small_url": string,
+      "poster_medium_url": string,
+      "poster_list_thumb_url": string,
+      "poster_preview_thumb_url": string,
+      "poster_mobile_thumb_url": string,
+      "reservation_settings_template_id": integer,
+      "end_time": timestamp,
+      "state": string,
+      "tickets_url": string,
+      "started": boolean,
+      "facebook_token_required": boolean,
+      "expected_guestlists_count": integer,
+      "total_reservations_count": integer,
+      "total_reservation_minimums": integer,
+      "global_fee": float,
+      "venue_fee": float,
+      "artists": [{artist#HASH}, ...],
+      "general_admission_template": {
+        "id": integer,
+        "name": string,
+        "general_admission_entrance_types": [{general_admission_entrance_type#HASH}, ...],
+        "venue_id": integer,
+        "removable": boolean
+      },
+      "sections": [{section#HASH}, ...],
+      "tables": [{table#HASH}, ...],
+      "guestlist_types": [{guestlist_type#HASH}, ...]
+
+### List
+    url: /api/v1/events(.:format)
+    format: json
+    method: GET
+    in
+      auth_token: string
+      date_start: string // optional, format: "YYYY-MM-DD"
+      date_end: string // optional, format: "YYYY-MM-DD"
+      event_ids: array of integers // optional
+      venue_id: integer // optional
+    out [{event_details#HASH},{event_details#HASH}, ...]
+
+### List of events (lite)
+    url: /api/v1/events/lite(.:format)
+    format: json
+    method: GET
+    in
+      auth_token: string
+      date_start: string // optional, format: "YYYY-MM-DD"
+      date_end: string // optional, format: "YYYY-MM-DD"
+      event_ids: array of integers // optional
+    out [
+      {
+        id: integer,
+        venue_id: integer,
+        name: string,
+        date: datetime,
+        location: string,
+        dress_code: string,
+        age: string,
+        description: text,
+        poster_url: string,
+        poster_mobile_thumb_url: string,
+        section_ids: array of integers,
+        table_ids: array of integers,
+        artists: [{artist#HASH}, ...],
+        guestlist_type_ids: array of integers
+      }, ...
+    ]
+
+### Event details
+    url: /api/v1/events/:id(.:format)
+    format: json
+    method: GET
+    in {
+      auth_token: "o1ey7RZg13xzyPHPJnAH"
+    }
+    out {
+      id: integer,
+      venue_id: integer,
+      venue_name: string,
+      name: string,
+      date: datetime,
+      location: string,
+      dress_code: string,
+      age: string,
+      description: text,
+      poster: string,
+      artists: [
+        {
+          "avatar": {
+            "url": string,
+            "thumb_100":{
+              "url": string
+            }
+          },
+          "description": string,
+          "id": integer,
+          "name": string,
+          "status": string,  // (Dictionary key artist_status)
+        }
+      ],
+      general_admission_template: {
+        name: string,
+        general_admission_entrance_types: [
+          {
+            title: string,
+            male_price: decimal,
+            female_price: decimal,
+            male_quantity: integer,
+            female_quantity: integer
+          }
+        ]
+      }
+    }
+
+### Event. List of rooms
+    url: /api/v1/events/:id/rooms(.:format)
+    format: json
+    method: GET
+    in {
+      auth_token: "o1ey7RZg13xzyPHPJnAH"
+    }
+    out: [
+      {
+        id: integer,
+        name: string,
+        background_url: string
+      }, ...]
+
+### All rooms
+    url: /api/v1/events/rooms(.:format)
+    format: json
+    method: GET
+    in {
+      auth_token: "o1ey7RZg13xzyPHPJnAH"
+      room_ids: [1,2,3] //optional
+    }
+    out: [
+      {
+        id: integer,
+        name: string,
+        background_url: string
+      }, ...]
+
+### Event. List of sections
+    url: /api/v1/events/:id/sections(.:format)
+    format: json
+    method: GET
+    in {
+      auth_token: "o1ey7RZg13xzyPHPJnAH"
+    }
+    out: [
+      {
+        id: integer,
+        name: string,
+        minimum: float
+        available_places: integer
+        total_places: integer,
+        color: string,
+        reservation_room_id: integer
+      }, ...]
+
+### All sections
+    url: /api/v1/events/sections(.:format)
+    format: json
+    method: GET
+    in {
+      auth_token: "o1ey7RZg13xzyPHPJnAH"
+      section_ids: [1,2,3] //optional
+    }
+    out: [
+      {
+        id: integer,
+        name: string,
+        color: string
+      }, ...]
+
+### Event. List of tables
+    url: /api/v1/events/:id/tables(.:format)
+    format: json
+    method: GET
+    in {
+      auth_token: "o1ey7RZg13xzyPHPJnAH"
+    }
+    out: [
+      {
+        id: integer,
+        name: string,
+        reservation_section_id: integer,
+        available: boolean,
+        coordinates: {
+          x: float,
+          y: float
+        },
+        shape: string,  // "circle" or "square"
+        size: string,  // "small", "medium", "large"
+        capacity: integer
+      }, ...]
+
+### Event. All tables
+    url: /api/v1/events/tables(.:format)
+    format: json
+    method: GET
+    in {
+      auth_token: "o1ey7RZg13xzyPHPJnAH"
+      section_ids: [1,2,3] // optional
+      table_ids: [1,2,3] // optional
+    }
+    out: [
+      {
+        id: integer,
+        name: string
+        reservation_section_id: integer
+      }, ...]
+
+### All guestlist types
+    url: api/v1/events/:id/types
+    format: json
+    method: GET
+    in {
+      auth_token: "o1ey7RZg13xzyPHPJnAH",
+      gender_type: string // 'males' or 'females'. All records if not set.
+    }
+    out [
+      {
+        id: integer,
+        guestlist_template_id: integer,
+        name: string,
+        person_count: integer,
+        price_per_person: float,
+        gender_type: string
+        }, {...}, ...
+    ]
+
+### Log sharing
+    url: api/v1/events/:id/share_log
+    format: json
+    method: POST
+    in {
+      auth_token: "o1ey7RZg13xzyPHPJnAH"
+    }
+    out { message: string }
