@@ -13,6 +13,7 @@
     url: "/api/v1/dictionaries(.:format)"
     format: json
     method: GET
+    in: no params
     out: [{dictionary#HASH}, ...]
 
     example:
@@ -22,6 +23,7 @@
     url: "/api/v1/dictionaries/:key(.:format)"
     format: json
     method: GET
+    in: no params
     out: {dictionary#HASH}
 
     example:
