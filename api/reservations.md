@@ -106,7 +106,7 @@
     out: [{reservation#HASH},...]
 
     example:
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d event_id=9 -d https://beyondvip.com/api/v1/reservations/past.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d event_id=9 https://beyondvip.com/api/v1/reservations/past.json
 
 ### Get
     url: /api/v1/reservations/:id(.:format)

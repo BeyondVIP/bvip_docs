@@ -1,4 +1,5 @@
 # Api::V1::Events
+
 #### {artist#HASH}
     {
       "id": integer,
