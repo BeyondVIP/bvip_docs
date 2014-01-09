@@ -1,26 +1,5 @@
-[**Auth**](/api/tokens.md)
----
-
-# Dictionaries
-
-## Index
-    url: "/api/v1/dictionaries(.:format)"
-    format: json
-    method: POST
-    out: [{
-      key: "contact_state",
-      value: ["customer","partner"]
-    },{...},...]
-
-## Show
-    url: "/api/v1/dictionaries/:key(.:format)"
-    format: json
-    method: POST
-    out: {
-      key: "contact_state",
-      value: ["customer","partner"]
-    }
-
+* [**Auth**](/api/tokens.md)
+* [**Dictionaries**](/api/dictionaries.md)
 ---
 
 # PROFILE
