@@ -16,43 +16,7 @@
 * [**Tags**](/api/tags.md)
 * [**Venues**](/api/venues.md)
 * [**Guestlists**](/api/guestlists.md)
-
----
-# Guestlist
-
-## {tally#HASH}
-    {
-      "id": integer,
-      "event_id": integer,
-      "user_id": integer,
-      "actual_count_males": integer,
-      "actual_count_females": integer,
-      "type_for_males_id": integer,
-      "type_for_females_id": integer
-    }
-
-## Index
-    url: /api/v1/tallies(.:format)
-    format: json
-    method: GET
-    in: {
-      auth_token: "o1ey7RZg13xzyPHPJnAH"
-      event_id: integer
-    }
-    out [{tally#HASH}, {tally#HASH}, ...]
-
-## Update
-    url: /api/v1/tallies/:id(.:format)
-    format: json
-    method: PUT
-    in: {
-      auth_token: "o1ey7RZg13xzyPHPJnAH"
-      tally: {
-        actual_count_males: integer,
-        actual_count_females: integer
-      }
-    }
-    out {tally#HASH}
+* [**Tallies**](/api/tallies.md)
 
 ---
 # Static text (i.e. terms of use, privacy policy etc.)
