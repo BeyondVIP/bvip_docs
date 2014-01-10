@@ -9,7 +9,7 @@
 #### {state#STRING}
     'active', 'cancelled'
 
-#### [{note#HASH}](/api/notes.md/notehash)
+#### [{note#HASH}](/api/notes.md#notehash)
 
 #### {guestlist#HASH}
     {
