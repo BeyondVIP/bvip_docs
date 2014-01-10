@@ -9,6 +9,8 @@
 
 #### [{log_method#HASH}](/api/log_methods.md#log_methodhash)
 
+#### [{log_method_kind#STRING}](/api/log_methods.md#log_method_kindstring)
+
 #### {task#HASH}
     {
       id: integer,
@@ -27,7 +29,7 @@
       log_methods: [{log_method#HASH}, ...],
       created_at: timestamp,
       event_id: integer,
-      complete_method: string,
+      complete_method: {log_method_kind#STRING},
       result: text,
       contact_name: string
     }
