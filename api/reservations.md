@@ -16,20 +16,7 @@
       reservation_section_id: integer
     }
 
-#### {note#HASH}
-    {
-      "id": integer,
-      "text": string,
-      "task_id": integer,
-      "user_id": integer,
-      "created_at": timestamp,
-      "guestlist_id": integer,
-      "reservation_id": integer,
-      "contact_id": integer,
-      "event_name": string,
-      "can_be_edited": boolean,
-      "can_be_deleted": boolean
-    }
+#### [{note#HASH}](/api/notes.md/notehash)
 
 #### {reservation#HASH}
     {
