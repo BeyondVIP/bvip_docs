@@ -12,6 +12,8 @@
 * [**Log Methods**](/api/log_methods.md)
 * [**Events**](/api/events.md)
 * [**Artists**](/api/artists.md)
+* [**Reservations**](/api/reservations.md)
+* [**Tags**](/api/tags.md)
 
 ---
 # Guestlist Types
@@ -35,50 +37,6 @@
         default: boolean
       }, ...]
 
----
-[**Reservations**](/api/reservations.md)
-
----
-# Tags
-## {tag#HASH}
-    {
-      "id": integer,
-      "tag_category_id": integer,
-      "name": string
-    }
-
-## List
-    url: /api/v1/settings/tags
-    format: json
-    method: GET
-    in: {
-      auth_token: "o1ey7RZg13xzyPHPJnAH"
-    }
-    out: [{
-      "ancestry": "1",
-      "id": 2,
-      "name": "TagCategory2",
-      "tags": [
-        {
-          "id": 2,
-          "name": "Tag2",
-        },
-        {
-          "id": 3,
-          "name": "Tag3",
-        },
-        ....
-      ]
-    }, {...}, ...]
-
----
-# Tag categories
-## {tag_category#HASH}
-    {
-      "id": integer,
-      "parent_id": integer, // optional (return null if not present),
-      "name": string
-    }
 ---
 # Venue filter
 ## List available venues

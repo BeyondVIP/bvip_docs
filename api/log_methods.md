@@ -1,7 +1,7 @@
 # Api::V1::LogMethods
 
 #### {kind#STRING}
-    call, text, email, social, meet
+    'call', 'text', 'email', 'social', 'meet'
 
 #### {log_method#HASH}
     {

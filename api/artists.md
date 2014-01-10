@@ -1,4 +1,4 @@
-# Api::V1::LogMethods
+# Api::V1::Artists
 
 #### {artist#HASH}
     {
