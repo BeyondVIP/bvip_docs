@@ -11,25 +11,7 @@
 * [**Notes**](/api/notes.md)
 * [**Log Methods**](/api/log_methods.md)
 * [**Events**](/api/events.md)
-
----
-# Artists
-## List of artists
-    url: api/v1/artists(.:format)
-    format: json
-    method: GET
-    in {
-      auth_token: "o1ey7RZg13xzyPHPJnAH"
-      date_start: "2012-12-01", // optional
-      date_end: "2012-12-28", // optional
-    }
-    out: [
-      {
-        id: integer,
-        name: string,
-        avatar_url: string,
-        description: text
-      }, ...]
+* [**Artists**](/api/artists.md)
 
 ---
 # Guestlist Types
