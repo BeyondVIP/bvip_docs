@@ -18,60 +18,7 @@
 * [**Guestlists**](/api/guestlists.md)
 * [**Tallies**](/api/tallies.md)
 * [**Static Texts**](/api/static_texts.md)
-
-# FILTERS
-
-## {filter#HASH}
-    {
-      is_included: string,
-      key: string,
-      value: string
-    }
-
-## {filter_pattern#HASH}
-    {
-      id: integer,
-      name: string,
-      filters: [{filter#HASH}, {filter#HASH}, ...]
-    }
-
-## List of filter patterns
-    url: /api/v1/filters(.:format)
-    format: json
-    method: GET
-    in: {
-      auth_token: "o1ey7RZg13xzyPHPJnAH"
-    }
-    out: [{filter_pattern#HASH}, {filter_pattern#HASH}, ...]
-
-## Create filter pattern
-    url: /api/v1/filters(.:format)
-    format: json
-    method: POST
-    in: {
-      auth_token: "o1ey7RZg13xzyPHPJnAH",
-      filter_pattern: {filter_pattern#HASH}
-    }
-    out: {filter_pattern#HASH}
-
-## Update filter pattern
-    url: /api/v1/filters/:id(.:format)
-    format: json
-    method: PUT
-    in: {
-      auth_token: "o1ey7RZg13xzyPHPJnAH",
-      filter_pattern: {filter_pattern#HASH}
-    }
-    out: {filter_pattern#HASH}
-
-## Delete filter pattern
-    url: /api/v1/filters/:id(.:format)
-    format: json
-    method: DELETE
-    in: {
-      auth_token: "o1ey7RZg13xzyPHPJnAH"
-    }
-    out: {message: 'Filter pattern was removed'}
+* [**Filters**](/api/filters.md)
 
 ---
 # Last Changes
