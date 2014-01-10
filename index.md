@@ -17,27 +17,7 @@
 * [**Venues**](/api/venues.md)
 * [**Guestlists**](/api/guestlists.md)
 * [**Tallies**](/api/tallies.md)
-
----
-# Static text (i.e. terms of use, privacy policy etc.)
-
-## {static_text#HASH}
-    {
-      "id": integer,
-      "text_type": string, // "terms" or "privacy"
-      "title": string,
-      "body": text
-    }
-
-## Get static text by type
-    url: /api/v1/static_texts(.:format)
-    format: json
-    method: GET
-    in: {
-      auth_token: "o1ey7RZg13xzyPHPJnAH",
-      type: "terms"
-    }
-    out: {static_text#HASH}
+* [**Static Texts**](/api/static_texts.md)
 
 # FILTERS
 
