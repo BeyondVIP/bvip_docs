@@ -14,6 +14,7 @@
 * [**Artists**](/api/artists.md)
 * [**Reservations**](/api/reservations.md)
 * [**Tags**](/api/tags.md)
+* [**Venues**](/api/venues.md)
 
 ---
 # Guestlist Types
@@ -36,55 +37,6 @@
         gender_type: string,
         default: boolean
       }, ...]
-
----
-# Venue filter
-## List available venues
-    url: /api/v1/venues/list(.:format)
-    format: json
-    method: GET
-    in: {
-      auth_token: "o1ey7RZg13xzyPHPJnAH"
-    }
-    out: [
-      {
-        id: 1,
-        name: "Venue name",
-        home: true,
-        selected: false
-      },
-      {
-        id: 2,
-        name: "Second venue name",
-        home: false,
-        selected: false
-      },
-      ...
-    ]
-
-## Set venue filter for staff
-    url: /api/v1/venues/set_filters(.:format)
-    format: json
-    method: POST
-    in: {
-      auth_token: "o1ey7RZg13xzyPHPJnAH",
-      venue_ids: "1,3,4" // "0" for all venues
-    }
-    out: [
-      {
-        id: 1,
-        name: "Venue name",
-        home: true,
-        selected: true
-      },
-      {
-        id: 2,
-        name: "Second venue name",
-        home: false,
-        selected: false
-      },
-      ...
-    ]
 
 ---
 # Guestlist
