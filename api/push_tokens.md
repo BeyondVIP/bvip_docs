@@ -1,12 +1,12 @@
 # Api::V1::PushTokens
 
-## {push_token#HASH}
+#### {push_token#HASH}
     {
       token: string
       device_id: string
     }
 
-## Create push token
+### Create push token
     url: api/v1/push_tokens(.:format)
     format: json
     method: POST

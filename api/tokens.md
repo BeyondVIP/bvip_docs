@@ -71,3 +71,11 @@
 
     example:
     $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d token=1988 https://beyondvip.com/api/v1/settings/verify_phone.json
+
+## Possible responses
+
+### User deactivated
+    out: {
+      status_code: 423,
+      message: "User has been deactivated"
+    }
