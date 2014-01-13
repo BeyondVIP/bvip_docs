@@ -58,7 +58,8 @@
       note: text,
       notes: [{note#HASH}, ...],
       qualification: string,
-      status_name: string
+      status_name: string,
+      venue_id: integer
     }
 
 #### {guestlist_type#HASH}
