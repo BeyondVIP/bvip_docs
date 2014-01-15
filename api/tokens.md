@@ -1,5 +1,16 @@
 # Api::V1::Tokens
 
+## Server-to-server authentication
+### Just put your token in 'auth_token' parameter for each request
+    example:
+    url: "api/v1/events(.:format)"
+    format: json
+    method: GET
+    in:
+      auth_token: string // your auth token
+      ...
+
+## User based authentication
 ### Sign in
     url: "/api/v1/tokens(.:format)"
     format: json
