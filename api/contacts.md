@@ -212,16 +212,17 @@
     $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/contacts/1.json
 
 ### Search contact
-    url: "/api/v1/contacts/search(.:format)"
+    url: "/api/v1/contacts(.:format)"
     format: json
     method: GET
     in:
       auth_token: string
-      email: string // optional if phone is set
-      phone: string // optional if email is set
+      search[email]: string // optional
+      search[phone]: string // optional
+      search[name]: string // optional
     out: [
       {contact#HASH}, ...
     ]
 
     example:
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d email=contact@example.com https://beyondvip.com/api/v1/contacts/search.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d search[email]=mail  https://beyondvip.com/api/v1/contacts.json
