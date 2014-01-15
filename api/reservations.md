@@ -138,7 +138,7 @@
     out: {reservation#HASH}
 
     example:
-    $ curl -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d reservation[event_id]=9 -d reservation[status]=lead https://beyondvip.com/api/v1/reservations.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d reservation[event_id]=9 -d reservation[status]=lead https://beyondvip.com/api/v1/reservations.json
 
 ### Update
     url: /api/v1/reservations/:id(.:format)
@@ -179,7 +179,7 @@
 ### Examples
 
 #### Notes adding
-    $ curl -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d reservation[event_id]=9 -d reservation[status]=lead -d reservation[notes][]="New Note" https://beyondvip.com/api/v1/reservations.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d reservation[event_id]=9 -d reservation[status]=lead -d reservation[notes][]="New Note" https://beyondvip.com/api/v1/reservations.json
     $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d reservation[notes][]="New Note" https://beyondvip.com/api/v1/reservations/259.json
 
 #### Originator changing
