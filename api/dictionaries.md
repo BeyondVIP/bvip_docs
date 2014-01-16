@@ -2,10 +2,8 @@
 
 #### {dictionary#HASH}
     {
-      created_at: timestamp,
       id: integer,
       key: string,
-      updated_at: timestamp,
       value: array of values
     }
 
