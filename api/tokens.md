@@ -1,12 +1,13 @@
 # Api::V1::Tokens
 
 ## Server-to-server authentication
-Firstly get 'auth_token' using sign in request and user's email and password. Then make requests to api using this 'auth_token'.
+Firstly go to web application settings and get authentication key ('auth_token'). Then make requests to api using this key.
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/artists.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/contacts.json
 
+## User based authentication
 ### Sign in
     url: /api/v1/tokens(.:format)
     format: json

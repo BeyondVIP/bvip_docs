@@ -12,11 +12,17 @@
     url: api/v1/artists(.:format)
     format: json
     method: GET
-    in:
-      auth_token: string
-      date_start: string // optional, format: "YYYY-MM-DD"
-      date_end: string // optional, format: "YYYY-MM-DD"
-    out: [{artist#HASH}, ...]
 
-    example:
+  Request
+
+    auth_token: string
+    date_start: string // optional, format: "YYYY-MM-DD"
+    date_end: string // optional, format: "YYYY-MM-DD"
+
+  Response
+
+    [{artist#HASH}, ...]
+
+  Example
+
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/artists.json

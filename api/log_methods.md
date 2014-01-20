@@ -24,22 +24,30 @@
     url: /api/v1/logs(.:format)
     format: json
     method: GET
-    in:
+
+  Request
+
       auth_token: string
       contact_ids: array of integers or integer // optional
       kinds: array of {kind#STRING}s or {kind#STRING}
       page: integer
       per_page: integer
-    out: [{log_method#HASH}, ...]
 
-    example:
+  Response
+
+    [{log_method#HASH}, ...]
+
+  Example
+
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/logs.json
 
 ### Create
     url: /api/v1/logs(.:format)
     format: json
     method: POST
-    in:
+
+  Request
+
       auth_token: string
       contact_id: integer
       task_id: integer
@@ -52,16 +60,22 @@
         location_lng: float,
         date: timestamp // format: 'YYYY-MM-DDTHH:MM:SS-0000'
       }
-    out: {log_method#HASH}
 
-    example:
+  Response
+
+    {log_method#HASH}
+
+  Example
+
     $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_id=352 -d task_id=1 -d log[kind]=call -d log[date]="2014-01-01T20:00:00-0800" https://beyondvip.com/api/v1/logs.json
 
 ### Update
     url: /api/v1/logs/:id(.:format)
     format: json
     method: PUT
-    in:
+
+  Request
+
       auth_token: string
       log: {
         kind: {kind#STRING},
@@ -72,7 +86,11 @@
         location_lng: float,
         date: timestamp // format: 'YYYY-MM-DDTHH:MM:SS-0000'
       }
-    out: {log_method#HASH}
 
-    example:
+  Response
+
+    {log_method#HASH}
+
+  Example
+
     $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d log[date]="2014-01-02T20:00:00-0800" https://beyondvip.com/api/v1/logs/1.json
