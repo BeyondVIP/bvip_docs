@@ -20,9 +20,15 @@
     url: /api/v1/settings/tags(.:format)
     format: json
     method: GET
-    in:
-      auth_token: string
-    out: [{tag_category#HASH}, ...]
 
-    example:
+  Request
+
+    auth_token: string
+
+  Response
+
+    [{tag_category#HASH}, ...]
+
+  Example
+
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/settings/tags.json

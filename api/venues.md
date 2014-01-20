@@ -53,21 +53,33 @@
     url: /api/v1/venues/list(.:format)
     format: json
     method: GET
-    in:
-      auth_token: string
-    out: [{venue#HASH}, ...]
 
-    example:
+  Request
+
+    auth_token: string
+
+  Response
+
+    [{venue#HASH}, ...]
+
+  Example
+
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/venues/list.json
 
 ### Set venue filter for staff
     url: /api/v1/venues/set_filters(.:format)
     format: json
     method: POST
-    in:
-      auth_token: string
-      venue_ids: string // "0" for all venues
-    out: [{venue#HASH}, ...]
 
-    example:
+  Request
+
+    auth_token: string
+    venue_ids: string // "0" for all venues
+
+  Response
+
+    [{venue#HASH}, ...]
+
+  Example
+
     $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d venue_ids="1,2" https://beyondvip.com/api/v1/venues/set_filters.json
