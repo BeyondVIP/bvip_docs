@@ -36,8 +36,8 @@ Firstly get 'auth_token' using sign in request and user's email and password. Th
 
   Request
 
-      auth_token: string
-      apn_token: string
+    auth_token: string
+    apn_token: string
 
   Response
 
@@ -57,7 +57,7 @@ Firstly get 'auth_token' using sign in request and user's email and password. Th
 
   Request
 
-      email: string
+    email: string
 
   Response
 
@@ -77,8 +77,8 @@ Firstly get 'auth_token' using sign in request and user's email and password. Th
 
   Request
 
-      auth_token: string
-      phone: string // format: "(123)456-7890"
+    auth_token: string
+    phone: string // format: "(123)456-7890"
 
   Response
 
@@ -98,8 +98,8 @@ Firstly get 'auth_token' using sign in request and user's email and password. Th
 
   Request
 
-      auth_token: string
-      token: string // sent to mobile phone after making phone verification request
+    auth_token: string
+    token: string // sent to mobile phone after making phone verification request
 
   Response
 
