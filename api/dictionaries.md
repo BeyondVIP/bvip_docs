@@ -8,7 +8,7 @@
     }
 
 ### List
-    url: "/api/v1/dictionaries(.:format)"
+    url: /api/v1/dictionaries(.:format)
     format: json
     method: GET
 
@@ -21,7 +21,7 @@
     $ curl -X GET https://beyondvip.com/api/v1/dictionaries.json
 
 ### Get
-    url: "/api/v1/dictionaries/:key(.:format)"
+    url: /api/v1/dictionaries/:key(.:format)
     format: json
     method: GET
 
