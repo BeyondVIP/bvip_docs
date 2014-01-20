@@ -21,9 +21,7 @@ Firstly get 'auth_token' using sign in request and user's email and password. Th
 
   Response
 
-    {
-      token: string
-    }
+    { token: string }
 
   Example
 
@@ -41,9 +39,7 @@ Firstly get 'auth_token' using sign in request and user's email and password. Th
 
   Response
 
-    {
-      message: "User signed out."
-    }
+    { message: "User signed out." }
 
 
   Example
@@ -61,9 +57,7 @@ Firstly get 'auth_token' using sign in request and user's email and password. Th
 
   Response
 
-    {
-      message: "Please check the email associated with this account for instructions on how to reset you password"
-    }
+    { message: "Please check the email associated with this account for instructions on how to reset you password" }
 
 
   Example
@@ -82,9 +76,7 @@ Firstly get 'auth_token' using sign in request and user's email and password. Th
 
   Response
 
-    {
-      message: "Verification code sent."
-    }
+    { message: "Verification code sent." }
 
 
   Example
@@ -103,9 +95,7 @@ Firstly get 'auth_token' using sign in request and user's email and password. Th
 
   Response
 
-    {
-      message: "Your number was successfully confirmed."
-    }
+    { message: "Your number was successfully confirmed." }
 
 
   Example
