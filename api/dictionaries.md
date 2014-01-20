@@ -11,18 +11,24 @@
     url: "/api/v1/dictionaries(.:format)"
     format: json
     method: GET
-    in: no params
-    out: [{dictionary#HASH}, ...]
 
-    example:
+  Response
+
+    [{dictionary#HASH}, ...]
+
+  Example
+
     $ curl -X GET https://beyondvip.com/api/v1/dictionaries.json
 
 ### Get
     url: "/api/v1/dictionaries/:key(.:format)"
     format: json
     method: GET
-    in: no params
-    out: {dictionary#HASH}
 
-    example:
+  Response
+
+    {dictionary#HASH}
+
+  Example:
+
     $ curl -X GET https://beyondvip.com/api/v1/dictionaries/ethnicities.json
