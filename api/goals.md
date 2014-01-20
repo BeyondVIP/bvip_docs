@@ -23,15 +23,20 @@
     }
 
 ### All goals (monthly)
-    url: "/api/v1/goals/all(.:format)"
+    url: /api/v1/goals/all(.:format)
     format: json
     method: GET
-    in:
-      auth_token: string
-      year: integer
-      month: integer
-      method: {method#STRING}
-    out: [
+
+  Request
+
+    auth_token: string
+    year: integer
+    month: integer
+    method: {method#STRING}
+
+  Response
+
+    [
       {goal#HASH#sales},
       {goal#HASH#new_contacts},
       {goal#HASH#logged_tasks},
@@ -41,65 +46,88 @@
       {goal#HASH#email_blasts}
     ]
 
-    example:
+  Example
+
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 -d method=monthly https://beyondvip.com/api/v1/goals/all.json
 
 ### Sales goals
-    url: "/api/v1/goals/sales(.:format)"
+    url: /api/v1/goals/sales(.:format)
     format: json
     method: GET
-    in:
-      auth_token: string
-      year: integer
-      month: integer
-      method: "monthly"
-    out: {goal#HASH#sales}
 
-    example:
+  Request
+
+    auth_token: string
+    year: integer
+    month: integer
+    method: "monthly"
+
+  Response
+
+    {goal#HASH#sales}
+
+  Example
+
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 -d method=monthly https://beyondvip.com/api/v1/goals/sales.json
 
 ### Task goals
-    url: "/api/v1/goals/tasks(.:format)"
+    url: /api/v1/goals/tasks(.:format)
     format: json
     method: GET
-    in:
-      auth_token: string
-      year: integer
-      month: integer
-      day: integer // not needed for "monthly"
-      goal_type: string // "new_contacts", "logged_tasks", "guestlist", "partner_outreach", "social_media", "email_blasts"
-      method: string
-    out: {goal#HASH}
 
-    example:
+  Request
+
+    auth_token: string
+    year: integer
+    month: integer
+    day: integer // not needed for "monthly"
+    goal_type: string // "new_contacts", "logged_tasks", "guestlist", "partner_outreach", "social_media", "email_blasts"
+    method: string
+
+  Response
+
+    {goal#HASH}
+
+  Example
+
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 -d goal_type=new_contacts -d method=monthly https://beyondvip.com/api/v1/goals/tasks.json
 
 ### Get goals by goal type
-    url: "/api/v1/goals/get(.:format)"
+    url: /api/v1/goals/get(.:format)
     format: json
     method: GET
-    in:
-      auth_token: string
-      year: integer
-      month: integer
-      day: integer // not needed for "monthly"
-      goal_type: string // "sales", "new_contacts", "logged_tasks", "guestlist", "partner_outreach", "social_media", "email_blasts"
-      method: string
-    out: sales goals out or task goals out
 
-    example:
+  Request
+
+    auth_token: string
+    year: integer
+    month: integer
+    day: integer // not needed for "monthly"
+    goal_type: string // "sales", "new_contacts", "logged_tasks", "guestlist", "partner_outreach", "social_media", "email_blasts"
+    method: string
+
+  Response
+
+    {goal#HASH}
+
+  Example
+
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 -d goal_type=sales -d method=monthly https://beyondvip.com/api/v1/goals/get.json
 
 ### Get goals by event
-    url: "/api/v1/goals/events(.:format)"
+    url: /api/v1/goals/events(.:format)
     format: json
     method: GET
-    in:
-      auth_token: string
-      event_id: integer
-    out: {
-      goal_amount: float
-    }
 
-    example:
+  Request
+
+    auth_token: string
+    event_id: integer
+
+  Response
+
+    { goal_amount: float }
+
+  Example
+
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d event_id=19 https://beyondvip.com/api/v1/goals/events.json
