@@ -54,7 +54,7 @@
       guestlist_template_id: integer
     }
 
-#### {event_details#HASH}
+#### {event#HASH}
     {
       id: integer,
       venue_id: integer,
@@ -108,7 +108,7 @@
 
   Response
 
-    [{event_details#HASH}, ...]
+    [{event#HASH}, ...]
 
   Example
 
@@ -151,95 +151,6 @@
   Example
 
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d date_start="2014-01-01" https://beyondvip.com/api/v1/events/lite.json
-
-### Event details
-    url: /api/v1/events/:id(.:format)
-    format: json
-    method: GET
-
-  Request
-
-    auth_token: string
-
-  Response
-
-    {
-      age: string,
-      closeout_notes: string,
-      company_id: integer,
-      created_at: timestamp,
-      date: timestamp,
-      description: text,
-      dress_code: string,
-      end_time: timestamp,
-      event_type: string,
-      facebook_link: string,
-      facebook_token_required: boolean,
-      finished: boolean,
-      general_admission_template_id: integer,
-      global_fee: float,
-      guestlist_sales: boolean,
-      guestlist_template_id: integer,
-      id: integer,
-      master_id: integer,
-      menu_template_id: integer,
-      music_type: string,
-      name: string,
-      personalized_link: string,
-      poster: {
-        url: string,
-        small: {
-          url: string
-        },
-        list_thumb: {
-          url: string
-        },
-        preview_thumb: {
-          url: string
-        },
-        mobile_thumb: {
-          url: string
-        },
-        medium: {
-          url: string
-        }
-      },
-      promo_status: string,
-      reservation_minimum_template_id: integer,
-      reservation_sales: boolean,
-      reservation_settings_template_id: integer,
-      show_on_public: boolean,
-      start_time: timestamp,
-      state: string,
-      tickets_url: string,
-      updated_at: timestamp,
-      venue_fee: float,
-      venue_id: integer,
-      artists: [
-        {
-          avatar: {
-            url: string,
-            thumb_100:{
-              url: string
-            }
-          },
-          description: string,
-          id: integer,
-          name: string,
-          status: string,  // (Dictionary key artist_status)
-        }
-      ],
-      general_admission_template: {
-        name: string,
-        general_admission_entrance_types: [
-          {
-            title: string,
-            male_price: float,
-            female_price: float
-          }, ...
-        ]
-      }
-    }
 
 ### Event. List of rooms
     url: /api/v1/events/:id/rooms(.:format)
