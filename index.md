@@ -11,7 +11,6 @@
 * [**Notes**](/api/notes.md)
 * [**Log Methods**](/api/log_methods.md)
 * [**Events**](/api/events.md)
-* [**Artists**](/api/artists.md)
 * [**Reservations**](/api/reservations.md)
 * [**Tags**](/api/tags.md)
 * [**Venues**](/api/venues.md)
