@@ -50,7 +50,6 @@ Reservation entity represents that [contact](/api/contacts.md) may come to
 
 #### {reservation#HASH}
     {
-      bottles: integer, // reserved bottles count
       comp: string, // comp description
       actual_comp: float, // actual comp value
       contact_id: integer,
@@ -76,11 +75,9 @@ Reservation entity represents that [contact](/api/contacts.md) may come to
       },
       host_id: integer,
       id: integer,
-      last_stage: {stage#STRING},
       minimum: float, // minimum that contact can spend during the event
       note: text,
       notes: [{note#HASH}, ...],
-      number: integer, // is set during closeout
       originator_id: integer,
       party_size: integer, // count_males + count_females
       qualification: string, // contact qualification status at venue where event takes place
@@ -90,14 +87,12 @@ Reservation entity represents that [contact](/api/contacts.md) may come to
       requested_tables: [{reservation_table#HASH}, ...],
       assigned_tables: [{reservation_table#HASH}, ...],
       stage: {stage#STRING},
-      template_minimum: float, // minimum that contact can spend during the event. This is set automatically from reservation section.
       updated_at: timestamp,
       waitress_id: integer,
       date: timestamp, // event date
       task_ids: array of integers,
       status: string,
       status_name: string,
-      last_status: string,
       actual_spent: float, // is set during closeout
       pre_paid: float, // prepaid order (using staff's personal page)
       requested_table_ids: array of integers,
