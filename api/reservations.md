@@ -227,6 +227,19 @@ Reservation entity represents that [contact](/api/contacts.md) may come to
 
     $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d reservation[status]=prospect https://beyondvip.com/api/v1/reservations/259.json
 
+### Remove
+    url: /api/v1/reservations/:id(.:format)
+    format: json
+    method: DELETE
+
+  Response
+
+    { message: "The reservation was successfully removed" }
+
+  Example
+
+    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/reservations/259.json
+
 #### [**Get Staff**](/api/users.md)
 #### [**Edit Notes**](/api/notes.md)
 
