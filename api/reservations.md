@@ -1,4 +1,34 @@
 # Api::V1::Reservations
+Reservation entity represents that [contact](/api/contacts.md) may come to
+ specific [event](/api/events.md).
+
+**host_id** represents host – any [user](/api/users.md) from department "VIP
+ Host".
+
+**originator_id** represents originator – usually [user](/api/users.md) that
+ creates reservation.
+
+**referable_id** and **referable_type** represents referral – can be any
+ [user](/api/users.md) from any department or any [contact](/api/contacts.md).
+ In case of user *referable_type* is 'User', contact – 'Contact.
+
+**waitress_id** represents server – can be any [user](/api/users.md) from
+ department "Server".
+
+**reservation_section_id** – [section](/api/events.md#event-list-of-sections)
+ where reserved [table](/api/events.md#event-list-of-tables) is located.
+
+**requested_tables** and **requested_table_ids** –
+ [tables](/api/events.md#event-list-of-tables) which are requested for
+ reservation. Can be not present at all
+
+**assigned_tables** and **assigned_table_ids** –
+ [tables](/api/events.md#event-list-of-tables) which are assigned for
+ reservation. Can be not present at all
+
+**task_ids** – [tasks](/api/tasks.md) that are bound to reservation.
+
+**notes** – [notes](/api/notes.md) for reservation.
 
 #### {tense#STRING}
     'past', 'upcoming'
@@ -20,9 +50,9 @@
 
 #### {reservation#HASH}
     {
-      bottles: integer,
-      comp: string,
-      actual_comp: float,
+      bottles: integer, // reserved bottles count
+      comp: string, // comp description
+      actual_comp: float, // actual comp value
       contact_id: integer,
       contact_info: {
         name: string,
@@ -47,29 +77,29 @@
       host_id: integer,
       id: integer,
       last_stage: {stage#STRING},
-      minimum: float,
+      minimum: float, // minimum that contact can spend during the event
       note: text,
       notes: [{note#HASH}, ...],
-      number: integer,
+      number: integer, // is set during closeout
       originator_id: integer,
-      party_size: integer,
-      qualification: string,
+      party_size: integer, // count_males + count_females
+      qualification: string, // contact qualification status at venue where event takes place
       referable_id: integer,
       referable_type: {referable_type#STRING},
       reservation_section_id: integer,
       requested_tables: [{reservation_table#HASH}, ...],
       assigned_tables: [{reservation_table#HASH}, ...],
       stage: {stage#STRING},
-      template_minimum: float,
+      template_minimum: float, // minimum that contact can spend during the event. This is set automatically from reservation section.
       updated_at: timestamp,
       waitress_id: integer,
-      date: timestamp,
+      date: timestamp, // event date
       task_ids: array of integers,
       status: string,
       status_name: string,
       last_status: string,
-      actual_spent: float,
-      pre_paid: float,
+      actual_spent: float, // is set during closeout
+      pre_paid: float, // prepaid order (using staff's personal page)
       requested_table_ids: array of integers,
       assigned_table_ids: array of integers
     }
@@ -90,7 +120,7 @@
     auth_token: string
     event_id: integer // optional
     section_id: integer // optional
-    contact_ids: [1,2,3] or <integer> // optional
+    contact_ids: array of integers or integer // optional
     contact_id: integer // optional
 
   Response

@@ -1,4 +1,20 @@
 # Api::V1::Contacts
+Contact is an entity that you upload from mobile or through the web application,
+ or create using mobile or web application.
+
+You can create [reservations](/api/reservations.md),
+ [guestlists](/api/guestlists.md), [tasks](/api/tasks.md),
+ [log_methods](/api/log_methods.md), [notes](/api/notes.md) for contacts. Some
+ field values are taken from [dictionaries](/api/dictionaries.md).
+
+**phone** format should be "(123)456-7890"
+
+**contact_qualifications** shows the status of contact at specific venue. It may
+ be 'qualified', 'unqualified' or 'disqualified'.
+
+**[notes](/api/notes.md)** field is an array of notes.
+
+**[tags](/api/tags.md)** field is an array of tag ids that are bound to contact.
 
 #### {state#STRING}
     'customer', 'partner', 'both'
@@ -191,7 +207,7 @@
   Request
 
     auth_token: string
-    venue_id: integer //optional
+    venue_id: integer // optional
 
   Response
 
