@@ -2,6 +2,9 @@
 Reservation entity represents that [contact](/api/contacts.md) may come to
  specific [event](/api/events.md).
 
+Please note - you couldn't create 2 reservations for the same contact and the
+ same event.
+
 **host_id** represents host – any [user](/api/users.md) from department "VIP
  Host".
 
@@ -35,6 +38,14 @@ Reservation entity represents that [contact](/api/contacts.md) may come to
 
 #### {stage#STRING}
     "lead", "prospect", "opportunity", "win", "loss"
+
+#### {status#STRING}
+    'confirmed', 'late', 'all_arrived', 'partially_arrived', 'all_seated',
+    'partially_seated', 'check_dropped', 'paid', 'completed', 'unconfirmed',
+    'waitlist', 'waitlist_all_arrived', 'waitlist_partially_arrived',
+    'prospect', 'lead', 'not_interested', 'no_availability', 'different_venue',
+    'no_response', 'disqualified', 'disqualified_group', 'price', 'canceled',
+    'no_show', 'could_not_pay'
 
 #### {referable_type#STRING}
     'Contact', 'User'
@@ -91,8 +102,8 @@ Reservation entity represents that [contact](/api/contacts.md) may come to
       waitress_id: integer,
       date: timestamp, // event date
       task_ids: array of integers,
-      status: string,
-      status_name: string,
+      status: {status#STRING},
+      status_name: string, // readable status name
       actual_spent: float, // is set during closeout
       pre_paid: float, // prepaid order (using staff's personal page)
       requested_table_ids: array of integers,
@@ -164,7 +175,7 @@ Reservation entity represents that [contact](/api/contacts.md) may come to
       minimum: float,
       count_males: integer,
       count_females: integer,
-      status: string,
+      status: {status#STRING},
       note: text,
       qualification: string,
       comp: string,
@@ -203,7 +214,7 @@ Reservation entity represents that [contact](/api/contacts.md) may come to
       minimum: float,
       count_males: integer,
       count_females: integer,
-      status: string,
+      status: {status#STRING},
       note: text,
       qualification: string,
       comp: string,
