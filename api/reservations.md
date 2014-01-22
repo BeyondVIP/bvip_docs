@@ -33,6 +33,11 @@ Please note - you couldn't create 2 reservations for the same contact and the
 
 **notes** – [notes](/api/notes.md) for reservation.
 
+**contact_info** – read-only information about contact for which reservation is
+ made.
+
+**event_info** – read-only information about event.
+
 #### {tense#STRING}
     'past', 'upcoming'
 
@@ -87,7 +92,6 @@ Please note - you couldn't create 2 reservations for the same contact and the
       host_id: integer,
       id: integer,
       minimum: float, // minimum that contact can spend during the event
-      note: text,
       notes: [{note#HASH}, ...],
       originator_id: integer,
       party_size: integer, // count_males + count_females
@@ -176,7 +180,6 @@ Please note - you couldn't create 2 reservations for the same contact and the
       count_males: integer,
       count_females: integer,
       status: {status#STRING},
-      note: text,
       qualification: string,
       comp: string,
       actual_comp: float,
@@ -215,7 +218,6 @@ Please note - you couldn't create 2 reservations for the same contact and the
       count_males: integer,
       count_females: integer,
       status: {status#STRING},
-      note: text,
       qualification: string,
       comp: string,
       actual_comp: float,
