@@ -12,9 +12,10 @@ You can create [reservations](/api/reservations.md),
 **contact_qualifications** shows the status of contact at specific venue. It may
  be 'qualified', 'unqualified' or 'disqualified'.
 
-**[notes](/api/notes.md)** field is an array of notes.
+**notes** field is an array of [notes](/api/notes.md).
 
-**[tags](/api/tags.md)** field is an array of tag ids that are bound to contact.
+**tags** and **tag_ids** fields are arrays of [tag](/api/tags.md) ids that are
+ bound to contact.
 
 #### {state#STRING}
     'customer', 'partner', 'both'
@@ -43,7 +44,7 @@ You can create [reservations](/api/reservations.md),
       state: {state#STRING},
       avatar_mobile_thumb_url: string,
       gender: {gender#STRING},
-      birthdate: string,
+      birthdate: string, // format: "YYYY-MM-DD"
       organization: string,
       industry: string, // dictionary key 'industries'
       ethnicity: string, // dictionary key 'ethnicities'
@@ -61,20 +62,20 @@ You can create [reservations](/api/reservations.md),
       instagram: string,
       skype: string,
       website: string,
-      total_spent: float,
-      average_spent: float,
-      highest_spent: float,
-      reservations_count: integer,
-      campaigns_count: integer,
-      guestlists_count: integer,
-      last_reservation: timestamp,
-      last_visit: timestamp,
-      last_update: timestamp,
+      total_spent: float, // money that cotnact spent at events in all venues
+      average_spent: float, // average money that is spent per event
+      highest_spent: float, // highest spent at one event
+      reservations_count: integer, // total reservations made for contact
+      campaigns_count: integer, // total contact campaigns count
+      guestlists_count: integer, // total guestlists created for contact
+      last_reservation: timestamp, // contact's last reservation date
+      last_visit: timestamp, // last reservation or guestlist event date (past events)
+      last_update: timestamp, // last time user communicated with contact (log_method created)
       created_at: timestamp,
-      visited_venue_ids: array of integers,
+      visited_venue_ids: array of integers, // ids of venues where contact has completed reservations or guestlists
       contact_qualifications: [{contact_qualification#HASH}, ...],
-      total_comp: float,
-      no_shows: integer,
+      total_comp: float, // total comp money made in contact's reservations
+      no_shows: integer, // how many times contact had completed reservation or guestlist but didn't come
       avatar: {
         url: string,
         thumb_100: {
@@ -134,7 +135,32 @@ You can create [reservations](/api/reservations.md),
   Request
 
     auth_token: string
-    contact: {contact#HASH} // contact_qualifications are set out of contact hash
+    contact: { // contact_qualifications are set out of contact hash
+      first_name: string,
+      last_name: string,
+      title: string,
+      state: {state#STRING},
+      gender: {gender#STRING},
+      birthdate: string, // format: "YYYY-MM-DD"
+      organization: string,
+      industry: string, // dictionary key 'industries'
+      ethnicity: string, // dictionary key 'ethnicities'
+      sexual_preference: string, // dictionary key 'sexual_preferences'
+      status: {status#STRING},
+      email: string,
+      phone: string, // format: "(123)456-7890",
+      address: string,
+      country: string,
+      region: string, // dictionary key 'locations'
+      city: string, // dictionary key 'locations'
+      zip: string,
+      facebook: string,
+      twitter: string,
+      instagram: string,
+      skype: string,
+      website: string,
+      tag_ids: array of integers
+    }
     contact_qualifications: [
       {
         venue_id: integer,
@@ -164,7 +190,32 @@ You can create [reservations](/api/reservations.md),
   Request
 
     auth_token: string
-    contact: {contact#HASH} // contact_qualifications are set out of contact hash
+    contact: { // contact_qualifications are set out of contact hash
+      first_name: string,
+      last_name: string,
+      title: string,
+      state: {state#STRING},
+      gender: {gender#STRING},
+      birthdate: string, // format: "YYYY-MM-DD"
+      organization: string,
+      industry: string, // dictionary key 'industries'
+      ethnicity: string, // dictionary key 'ethnicities'
+      sexual_preference: string, // dictionary key 'sexual_preferences'
+      status: {status#STRING},
+      email: string,
+      phone: string, // format: "(123)456-7890",
+      address: string,
+      country: string,
+      region: string, // dictionary key 'locations'
+      city: string, // dictionary key 'locations'
+      zip: string,
+      facebook: string,
+      twitter: string,
+      instagram: string,
+      skype: string,
+      website: string,
+      tag_ids: array of integers
+    }
     contact_qualifications: [
       {
         venue_id: integer,
@@ -212,16 +263,16 @@ You can create [reservations](/api/reservations.md),
   Response
 
     {
-      total_spent: float,
-      average_spent: float,
-      highest_spent: float,
-      total_comp: float,
-      reservations: integer,
-      campaigns: integer,
-      guestlists: integer,
-      no_shows: integer,
-      cancellations: integer,
-      last_reservation: timestamp
+      total_spent: float, // money that cotnact spent at events in all venues
+      average_spent: float, // average money that is spent per event
+      highest_spent: float, // highest spent at one event
+      total_comp: float, // total comp money made in contact's reservations
+      reservations: integer, // total reservations made for contact
+      campaigns: integer, // total contact campaigns count
+      guestlists: integer, // total guestlists created for contact
+      no_shows: integer, // how many times contact had completed reservation or guestlist but didn't come
+      cancellations: integer, // number of reservations cancellations
+      last_reservation: timestamp // contact's last reservation date
     }
 
   Example
