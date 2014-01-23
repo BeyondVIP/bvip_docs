@@ -17,6 +17,9 @@ You can create [reservations](/api/reservations.md),
 **tags** and **tag_ids** fields are arrays of [tag](/api/tags.md) ids that are
  bound to contact.
 
+**contact_owners** represents what user owns contact at what venue. Different
+ [users](/api/users.md) can own contact at different venues.
+
 #### {state#STRING}
     'customer', 'partner', 'both'
 
@@ -89,7 +92,15 @@ You can create [reservations](/api/reservations.md),
         }
       },
       notes: [{note#HASH}, ...],
-      tags: array of integers
+      tags: array of integers,
+      contact_owners: [ // included only when 'join_owners' parameter is true during search request
+        {
+          id: integer,
+          user_id: integer,
+          venue_id: integer
+        },
+        ...
+      ]
     }
 
 #### Validations
@@ -337,6 +348,7 @@ You can create [reservations](/api/reservations.md),
     search[email]: string // optional
     search[phone]: string // optional
     search[name]: string // optional
+    join_owners: boolean // optional. If "1" then owners are included
 
   Response
 

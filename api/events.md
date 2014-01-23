@@ -1,5 +1,8 @@
 # Api::V1::Events
 
+#### {state#STRING}
+    'active', 'inactive'
+
 #### {artist#HASH}
     {
       id: integer,
@@ -72,7 +75,7 @@
       poster_mobile_thumb_url: string,
       reservation_settings_template_id: integer,
       end_time: timestamp,
-      state: string,
+      state: {state#STRING},
       tickets_url: string,
       started: boolean,
       facebook_token_required: boolean,
@@ -105,6 +108,7 @@
     date_end: string // optional, format: "YYYY-MM-DD"
     event_ids: array of integers // optional
     venue_id: integer // optional
+    state: {state#STRING} // optional
 
   Response
 
