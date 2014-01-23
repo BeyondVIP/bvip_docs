@@ -18,7 +18,8 @@ You can create [reservations](/api/reservations.md),
  bound to contact.
 
 **contact_owners** represents what user owns contact at what venue. Different
- [users](/api/users.md) can own contact at different venues.
+ [users](/api/users.md) can own contact at different venues. Contact owners can
+ be changed at create and update requests (if user has permissions).
 
 #### {state#STRING}
     'customer', 'partner', 'both'
@@ -174,7 +175,14 @@ You can create [reservations](/api/reservations.md),
       instagram: string,
       skype: string,
       website: string,
-      tag_ids: array of integers
+      tag_ids: array of integers,
+      contact_owners: [ // change contact owners at particular venue
+        {
+          venue_id: integer,
+          user_id: integer
+        },
+        ...
+      ]
     }
     contact_qualifications: [
       {
@@ -229,7 +237,14 @@ You can create [reservations](/api/reservations.md),
       instagram: string,
       skype: string,
       website: string,
-      tag_ids: array of integers
+      tag_ids: array of integers,
+      contact_owners: [ // change contact owners at particular venue
+        {
+          venue_id: integer,
+          user_id: integer
+        },
+        ...
+      ]
     }
     contact_qualifications: [
       {
