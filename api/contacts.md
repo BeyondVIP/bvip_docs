@@ -92,6 +92,10 @@ You can create [reservations](/api/reservations.md),
       tags: array of integers
     }
 
+#### Validations
+    always required:
+      first_name, email or phone
+
 ### List
     url: /api/v1/contacts(.:format)
     format: json
