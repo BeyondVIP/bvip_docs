@@ -1,12 +1,12 @@
 # Api::V1::Notes
 
+Note entity represents short description or comment for [reservation](/api/reservations.md), [guestlist](/api/guestlists.md), [task](/api/tasks.md) or [contact](/api/contacts.md)
+
 #### {note#HASH}
     {
-      id: integer,
       text: string,
       task_id: integer,
       user_id: integer,
-      created_at: timestamp,
       guestlist_id: integer,
       reservation_id: integer,
       contact_id: integer,
@@ -23,12 +23,14 @@
   Request
 
     auth_token: string
-    contact_id: integer      // OR
-    guestlist_id: integer    // OR
-    reservation_id: integer  // OR
-    task_id: integer         // OR
-    page: integer       //optional number of page
-    per_page: integer   //optional (default 10)
+    contact_id: integer      // optional, filter
+    guestlist_id: integer    // optional, filter
+    reservation_id: integer  // optional, filter
+    task_id: integer         // optional, filter
+    page: integer            // optional number of page
+    per_page: integer        // optional (default 10)
+    
+  * You can use only one filter (contact_id || guestlist_id || reservation_id || task_id)
 
   Response
 
@@ -65,7 +67,7 @@
     auth_token: string
     note: {
       text: text
-      contact_id: integer,     // OR
+      contact_id: integer,     
       guestlist_id: integer,   // OR
       reservation_id: integer, // OR
       task_id: integer,        // OR
