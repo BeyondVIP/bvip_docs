@@ -16,7 +16,6 @@
       gender: string,
       title: string,
       all_venues: [{venue#HASH}, ...],
-      permissions_struct: {permission#STRUCT},
       department_name: string,
       user_image: {
         photo: {

@@ -1,4 +1,18 @@
 # Api::V1::Events
+Event entity represents that some event takes place at specified
+ [venue](/api/venues.md) and time.
+
+You can create [reservations](/api/reservations.md) and
+ [guestlists](/api/guestlists.md) for contacts in specific event.
+
+**sections** field shows sections of event, they can be used when
+ creating [reservations](/api/reservations.md)
+
+**tables** field shows tables of event, they can be used when creating
+ [reservations](/api/reservations.md)
+
+**guestlist_types** field shows what guestlist types can be specified for males
+ and females on [guestlist](/api/guestlists.md) creation.
 
 #### {state#STRING}
     'active', 'inactive'
@@ -60,10 +74,10 @@
 #### {event#HASH}
     {
       id: integer,
-      venue_id: integer,
+      venue_id: integer, // venue where event takes place
       name: string,
-      date: timestamp,
-      location: string,
+      date: timestamp, // start date and time
+      location: string, // venue location
       dress_code: string,
       age: string,
       description: string,
@@ -74,24 +88,11 @@
       poster_preview_thumb_url: string,
       poster_mobile_thumb_url: string,
       reservation_settings_template_id: integer,
-      end_time: timestamp,
+      end_time: timestamp, // end date and time
       state: {state#STRING},
       tickets_url: string,
-      started: boolean,
-      facebook_token_required: boolean,
-      expected_guestlists_count: integer,
-      total_reservations_count: integer,
-      total_reservation_minimums: integer,
-      global_fee: float,
-      venue_fee: float,
-      artists: [{artist#HASH}, ...],
-      general_admission_template: {
-        id: integer,
-        name: string,
-        general_admission_entrance_types: [{general_admission_entrance_type#HASH}, ...],
-        venue_id: integer,
-        removable: boolean
-      },
+      started: boolean, // indicates if event is started
+      artists: [{artist#HASH}, ...]
       sections: [{section#HASH}, ...],
       tables: [{table#HASH}, ...],
       guestlist_types: [{guestlist_type#HASH}, ...]
