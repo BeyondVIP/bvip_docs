@@ -1,6 +1,6 @@
 # Api::V1::Notes
 
-Note entity represents short description or comment for reservation, guestlist, task or contact
+Note entity represents short description or comment for [reservation](/api/reservations.md), [guestlist](/api/guestlists.md), [task](/api/tasks.md) or [contact](/api/contacts.md)
 
 #### {note#HASH}
     {
