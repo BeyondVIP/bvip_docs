@@ -52,6 +52,7 @@
     [{task#HASH}, ...]
 
   Example
+
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/tasks.json
 
 ### Get
@@ -68,6 +69,7 @@
     {task#HASH}
 
   Example
+
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/tasks/1.json
 
 ### Create
@@ -89,6 +91,7 @@
     [{task#HASH}, ...]
 
   Example
+
     $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d task[category]="Follow Up" -d task[date]="2014-01-31" https://beyondvip.com/api/v1/tasks.json
 
 ### Update
@@ -109,6 +112,7 @@
     {task#HASH}
 
   Example
+
     $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d task[date]="2014-01-25" https://beyondvip.com/api/v1/tasks/2.json
 
 ### Delete
@@ -125,4 +129,5 @@
     { message: "The task was successfully deleted" }
 
   Example
+
     $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/tasks/2.json
