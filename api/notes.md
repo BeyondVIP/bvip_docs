@@ -30,7 +30,7 @@ Note entity represents short description or comment for [reservation](/api/reser
     page: integer            // optional number of page
     per_page: integer        // optional (default 10)
     
-  * You can use only one filter (contact_id || guestlist_id || reservation_id || task_id)
+  You can use only one filter on request(contact_id || guestlist_id || reservation_id || task_id)
 
   Response
 
