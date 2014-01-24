@@ -2,11 +2,9 @@
 
 #### {note#HASH}
     {
-      id: integer,
       text: string,
       task_id: integer,
       user_id: integer,
-      created_at: timestamp,
       guestlist_id: integer,
       reservation_id: integer,
       contact_id: integer,
