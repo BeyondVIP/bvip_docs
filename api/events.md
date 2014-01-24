@@ -1,9 +1,9 @@
 # Api::V1::Events
 Event entity represents that some event takes place at specified
- [venue](/api/venues.md) and time.
-
-You can create [reservations](/api/reservations.md) and
- [guestlists](/api/guestlists.md) for contacts in specific event.
+ [venue](/api/venues.md) and time. You can create
+ [reservations](/api/reservations.md) and [guestlists](/api/guestlists.md) for
+ contacts in specific event. Event has reservation rooms, which have reservation
+ sections, which have reservation tables.
 
 **sections** field shows sections of event, they can be used when
  creating [reservations](/api/reservations.md)
@@ -13,6 +13,9 @@ You can create [reservations](/api/reservations.md) and
 
 **guestlist_types** field shows what guestlist types can be specified for males
  and females on [guestlist](/api/guestlists.md) creation.
+
+Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
+ blue: '#42aaff', green: '#0bda51', yellow: '#ffff00'
 
 #### {state#STRING}
     'active', 'inactive'
@@ -42,7 +45,7 @@ You can create [reservations](/api/reservations.md) and
       color: string,
       reservation_room_id: integer,
       reservation_room_name: string,
-      minimum: float,
+      minimum: float, // minimum that contact should spend having seat at this section
       description: string
     }
 
