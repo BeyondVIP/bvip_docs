@@ -165,11 +165,29 @@ Please note - you couldn't create 2 reservations for the same contact and the
     format: json
     method: POST
 
+  Description
+
+  If 'contact_ids' parameter is set then reservations are created for every
+   contact whose id is placed. Alternatively 'contact' parameter can be set. In
+   that case 'contact_owners' can be changed if they are present in 'contact'.
+
+
   Request
 
     auth_token: string
-    contact_ids: array of integers or "access_token":"213dasm444<saas4..",
-
+    contact_ids: array of integers // not needed if 'contact' parameter is set
+    contact: { // this can be set instead of 'contact_ids' parameter
+      name: string,
+      email: string,
+      phone: string,
+      contact_owners: [ // change contact owners at particular venue
+        {
+          venue_id: integer,
+          user_id: integer
+        },
+        ...
+      ]
+    }
     reservation: {
       event_id: integer,
       originator_id: integer,
