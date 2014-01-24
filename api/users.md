@@ -1,4 +1,13 @@
 # Api::V1::Users
+User is the person who works at [venues](/api/venues.md). User can own
+ [contacts](/api/contacts.md) at particular venue. User can be originator, host,
+ referral, server of [reservation](/api/reservations.md) and originator of
+ [guestlist](/api/guestlists.md).
+
+**all_venues** field shows at what venues user works.
+
+**department_name** field show at which department user works. If it is "VIP
+  Host" user is host, if "Server" user is server.
 
 #### {venue#HASH}
     {
