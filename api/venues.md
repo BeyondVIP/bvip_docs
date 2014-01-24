@@ -1,52 +1,28 @@
 # Api::V1::Venues
+Venue represents place where [events](/api/events.md) are held. Venue filters
+ can be created to view venue-specific information only. [Staff](/api/users.md)
+ can have home venue and also can own [contacts](/api/contacts.md) at particular
+ venue.
 
 #### {venue_type#STRING}
     'Nightclub', 'Supperclub', 'Lounge', 'Dayclub', 'Pool Party', 'Cocktail Bar', 'Dance Club', 'Music Venue', 'Bar'
 
 #### {venue#HASH}
     {
-      address: string,
-      avatar: {
-        url: string,
-        thumb_100: {
-          url: string
-        },
-        mobile_thumb: {
-          url: string
-        },
-        thumb_200: {
-          url: string
-        }
-      },
-      company_id: integer,
-      created_at: timestamp,
-      description: string,
-      email: string,
-      facebook: string,
       id: integer,
-      instagram: string,
-      latitude: float,
-      location: string,
-      logo: {
-        url: string,
-        thumb_100: {
-          url: string
-        },
-        mobile_thumb: {
-          url: string
-        },
-        thumb_200: {
-          url: string
-        }
-      },
-      longitude: float,
       name: string,
+      email: string,
+      location: string,
+      longitude: float,
+      latitude: float,
       phone: string,
-      timezone: integer,
+      website: string,
+      facebook: string,
       twitter: string,
-      updated_at: timestamp,
+      instagram: string,
       venue_type: {venue_type#STRING},
-      website: string
+      timezone: integer,
+      description: string
     }
 
 ### List available venues
