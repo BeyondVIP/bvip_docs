@@ -1,8 +1,11 @@
 # Api::V1::Tags
 
+It is a tree of categories. All categories can contain tags.
+
+**ancestry** - ID of parent category
+
 #### {tag#HASH}
     {
-      company_id: integer,
       id: integer,
       name: string
     }
@@ -10,10 +13,9 @@
 #### {tag_category#HASH}
     {
       ancestry: string,
-      company_id: integer,
       id: integer,
       name: string,
-      tags: [{tag#HASH}, ...]
+      tags: [{tag#HASH}, ...] // OR empty array, if category doesn't have tags
     }
 
 ### List
