@@ -74,6 +74,13 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
       guestlist_template_id: integer
     }
 
+#### {reservation_room#HASH}
+      {
+        id: integer,
+        name: string,
+        background_url: string
+      }
+
 #### {event#HASH}
     {
       id: integer,
@@ -99,6 +106,7 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
       sections: [{section#HASH}, ...],
       tables: [{table#HASH}, ...],
       guestlist_types: [{guestlist_type#HASH}, ...]
+      reservation_rooms: [{reservation_room#HASH}]
 
 ### List
     url: /api/v1/events(.:format)
@@ -171,13 +179,7 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
 
   Response
 
-    [
-      {
-        id: integer,
-        name: string,
-        background_url: string
-      }, ...
-    ]
+    [{reservation_room#HASH}, ...]
 
   Example
 
