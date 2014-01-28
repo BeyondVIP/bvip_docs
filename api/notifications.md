@@ -8,7 +8,8 @@
       sender_type: string,
       title: string,
       message: text,
-      read: boolean
+      read: boolean,
+      created_at: timestamp
     }
 
 ### Get notifications for last 2 weeks
