@@ -4,6 +4,7 @@ Note entity represents short description or comment for [reservation](/api/reser
 
 #### {note#HASH}
     {
+      id: integer,
       text: string,
       task_id: integer,
       user_id: integer,
@@ -29,7 +30,7 @@ Note entity represents short description or comment for [reservation](/api/reser
     task_id: integer         // optional, filter
     page: integer            // optional number of page
     per_page: integer        // optional (default 10)
-    
+
   You can use only one filter on request(contact_id || guestlist_id || reservation_id || task_id)
 
   Response
@@ -67,7 +68,7 @@ Note entity represents short description or comment for [reservation](/api/reser
     auth_token: string
     note: {
       text: text
-      contact_id: integer,     
+      contact_id: integer,
       guestlist_id: integer,   // OR
       reservation_id: integer, // OR
       task_id: integer,        // OR
