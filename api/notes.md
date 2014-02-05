@@ -8,12 +8,14 @@ Note entity represents short description or comment for [reservation](/api/reser
       text: string,
       task_id: integer,
       user_id: integer,
+      created_at: timestamp,
       guestlist_id: integer,
       reservation_id: integer,
       contact_id: integer,
       event_name: string,
       can_be_edited: boolean,
-      can_be_deleted: boolean
+      can_be_deleted: boolean,
+      updated_at: timestamp
     }
 
 ### List
