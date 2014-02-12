@@ -94,6 +94,7 @@ You can create [reservations](/api/reservations.md),
       },
       notes: [{note#HASH}, ...],
       tags: array of integers,
+      name: string,
       contact_owners: [ // included only when 'join_owners' parameter is true during search request
         {
           id: integer,
