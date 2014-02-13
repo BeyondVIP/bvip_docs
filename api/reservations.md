@@ -186,7 +186,8 @@ Please note - you couldn't create 2 reservations for the same contact and the
           user_id: integer
         },
         ...
-      ]
+      ],
+      tag_ids: array of integers
     }
     reservation: {
       event_id: integer,

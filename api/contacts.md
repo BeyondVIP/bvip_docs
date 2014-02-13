@@ -135,6 +135,7 @@ You can create [reservations](/api/reservations.md),
   Request
 
     auth_token: string
+    join_owners: boolean // optional. If "1" then owners are included
 
   Response
 
