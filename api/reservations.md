@@ -38,6 +38,8 @@ Please note - you couldn't create 2 reservations for the same contact and the
 
 **event_info** – read-only information about event.
 
+Ones **actual_spent** is set reservation is closed out and cannot be changed.
+
 #### {tense#STRING}
     'past', 'upcoming'
 
@@ -209,7 +211,9 @@ Please note - you couldn't create 2 reservations for the same contact and the
       number: integer
       requested_table_ids: array of integers,
       assigned_table_ids: array of integers,
-      notes: array of strings
+      notes: array of strings,
+      check_number: string,
+      actual_spent: float
     }
 
   Response
@@ -249,7 +253,9 @@ Please note - you couldn't create 2 reservations for the same contact and the
       number: integer
       requested_table_ids: array of integers,
       assigned_table_ids: array of integers,
-      notes: array of strings
+      notes: array of strings,
+      check_number: string,
+      actual_spent: float
     }
 
   Response
