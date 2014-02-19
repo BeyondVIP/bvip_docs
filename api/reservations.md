@@ -39,6 +39,8 @@ Please note - you couldn't create 2 reservations for the same contact and the
 **event_info** – read-only information about event.
 
 Ones **actual_spent** is set reservation is closed out and cannot be changed.
+ To change reservation **open** parameter should be "1", then actual spent will
+ be deleted (new actual spent will be set if provided).
 
 #### {tense#STRING}
     'past', 'upcoming'
@@ -255,7 +257,8 @@ Ones **actual_spent** is set reservation is closed out and cannot be changed.
       assigned_table_ids: array of integers,
       notes: array of strings,
       check_number: string,
-      actual_spent: float
+      actual_spent: float,
+      open: boolean
     }
 
   Response
