@@ -3,6 +3,8 @@
 ## Server-to-server authentication
 Firstly go to web application settings and get authentication key ('auth_token'). Then make requests to api using this key.
 
+**app_id** shows from which [application](/api/applications.md) user logs in
+
   Example
 
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/contacts.json
@@ -19,10 +21,18 @@ Firstly go to web application settings and get authentication key ('auth_token')
     password: string
     device_token: string // unique identifier of device, e.g. iOS UDID
     mobile_os: string // "android" OR "ios"
+    app_id: string
 
   Response
 
-    { token: string }
+    {
+      token: string,
+      user_info: {
+        id: integer,
+        first_name: string,
+        last_name: string
+      }
+    }
 
   Example
 

@@ -1,3 +1,4 @@
+* [**Application Types**](/api/applications.md)
 * [**Response Codes**](/api/response_codes.md)
 * [**Auth**](/api/tokens.md)
 * [**Dictionaries**](/api/dictionaries.md)
