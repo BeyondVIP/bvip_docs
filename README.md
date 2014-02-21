@@ -1,4 +1,6 @@
-[Documentation](index.md)
+[Api Documentation](index.md)
+
+[Public Api Documentation](public.md)
 
 #### Production server
 https://beyondvip.com
