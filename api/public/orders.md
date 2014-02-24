@@ -1,7 +1,7 @@
 # Api::Public::Orders
 
 ### Create
-    url: /api/public/reservations(.:format)
+    url: /api/public/orders(.:format)
     format: json
     method: POST
 
@@ -19,7 +19,7 @@
       email: string,
       phone: string, // format: (123)456-7890
       birthdate: string, // format: YYYY-MM-DD
-      gender: string
+      gender: string // 'male' or 'female'
     }
     order_details: [{
       section_id: integer,
