@@ -38,10 +38,6 @@ Please note - you couldn't create 2 reservations for the same contact and the
 
 **event_info** – read-only information about event.
 
-Ones **actual_spent** is set reservation is closed out and cannot be changed.
- To change reservation **open** parameter should be "1", then actual spent will
- be deleted (new actual spent will be set if provided).
-
 #### {tense#STRING}
     'past', 'upcoming'
 
@@ -124,7 +120,7 @@ Ones **actual_spent** is set reservation is closed out and cannot be changed.
     always required:
       event_id, contact_id, status
     required if status is not 'lead', 'prospect' or any loss status:
-      reservation_section_id, count_males or count_females
+      reservation_section_id
 
 ### List
     url: /api/v1/reservations(/{tense#STRING})(.:format)
