@@ -3,3 +3,4 @@
 * [**Reservations**](/api/public/reservations.md)
 * [**Guestlsits**](/api/public/guestlists.md)
 * [**Orders**](/api/public/orders.md)
+* [**Credentials**](/api/public/credentials.md)

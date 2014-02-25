@@ -3,6 +3,10 @@
 Please note - you couldn't create 2 guestlists for the same contact and the
  same event.
 
+**facebook_token** should be present if
+ [event](/api/public/events.md#eventhash) has facebook_token_required
+ set to true.
+
 ### Create
     url: /api/public/guestlists(.:format)
     format: json
@@ -23,7 +27,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
       count_males: integer,
       count_females: integer
     },
-    facebook_token: string // optional
+    facebook_token: string
 
   Response
 
