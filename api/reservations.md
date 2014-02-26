@@ -38,6 +38,9 @@ Please note - you couldn't create 2 reservations for the same contact and the
 
 **event_info** – read-only information about event.
 
+**contact_degree** is a contact status. Values are combinations of 'vip',
+ 'upsell' and 'comp'
+
 #### {tense#STRING}
     'past', 'upcoming'
 
@@ -113,7 +116,8 @@ Please note - you couldn't create 2 reservations for the same contact and the
       actual_spent: float, // is set during closeout
       pre_paid: float, // prepaid order (using staff's personal page)
       requested_table_ids: array of integers,
-      assigned_table_ids: array of integers
+      assigned_table_ids: array of integers,
+      contact_degree: array of strings
     }
 
 #### Validations
@@ -211,7 +215,8 @@ Please note - you couldn't create 2 reservations for the same contact and the
       assigned_table_ids: array of integers,
       notes: array of strings,
       check_number: string,
-      actual_spent: float
+      actual_spent: float,
+      contact_degree: array of strings
     }
 
   Response
@@ -254,7 +259,8 @@ Please note - you couldn't create 2 reservations for the same contact and the
       notes: array of strings,
       check_number: string,
       actual_spent: float,
-      open: boolean
+      open: boolean,
+      contact_degree: array of strings
     }
 
   Response
