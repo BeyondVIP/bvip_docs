@@ -193,6 +193,7 @@ You can create [reservations](/api/reservations.md),
       },
       ...
     ]
+    join_owners: boolean // optional. If "1" then owners are included
 
   Response
 
@@ -255,6 +256,7 @@ You can create [reservations](/api/reservations.md),
       },
       ...
     ]
+    join_owners: boolean // optional. If "1" then owners are included
 
   Response
 
