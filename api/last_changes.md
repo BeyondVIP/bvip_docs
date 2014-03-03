@@ -1,4 +1,239 @@
 # Api::V1::LastChanges
+'Last Changes' functionality is used to pull database changes from server.
+
+For example, it is needed to receive any changes for Contact entity since March, 03 2014.
+First, the following request is used:
+####
+    $ # request 1
+    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d options[Contact][start_date]="2014-03-03 00:00:00 +0000" https://beyondvip.com/api/v1/last_changes.json
+####
+
+Response should have the following format:
+####
+    {
+      status: integer // 0 - success or 1 - error
+      timestamp: timestamp,
+      activity_log: [{log_element#HASH}, ...],
+      message: string // if status is 1
+    }
+####
+
+If **status** equals 1, try go to [Acknowledgment Section](#acknowledgment) for details. 
+Otherwise it equals 0. Then **activity_log** key possibly contains changes.
+
+**timestamp** shows current server time. Clients keep it and use it for next 'Last Changes' request.
+
+**message** describes why **stasus** equals 1. It is null if **status** equals 0. This is used for developing.
+
+Let's suppose that **activity_log** does not contain changes:
+####
+    {
+      "status": 0,
+      "timestamp": "2014-03-03T16:34:00GMT+01:00",
+      "activity_log": [],   // no changes
+      "message": null
+    }
+####
+
+Let's create a contact:
+####
+    $  curl -X POST -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d contact[email]=contact_`date +%N`@example.com -d contact[first_name]="John" https://beyondvip.com/api/v1/contacts.json
+####
+
+And then request:
+####
+    $ # request 2
+    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d options[Contact][start_date]="2014-03-03 00:00:00 +0000" https://beyondvip.com/api/v1/last_changes.json
+####
+
+Response should like the following:
+####
+    {
+      "status": 0,
+      "timestamp": "2014-03-03T16:38:38GMT+01:00",
+      "message": null,
+      "activity_log": [
+        {
+          "class_name": "Contact",
+          "id": 34659,
+          "action": "create",
+          "data": {
+            "id": 34659,
+            "first_name": "John",
+            "last_name": null,
+            "title": null,
+            "state": "customer",
+            "avatar_mobile_thumb_url": null,
+            "gender": null,
+            "birthdate": null,
+            "organization": null,
+            "industry": null,
+            "ethnicity": null,
+            "sexual_preference": null,
+            "status": "no_level",
+            "email": "contact_381869795@example.com",
+            "phone": null,
+            "address": null,
+            "country": null,
+            "region": null,
+            "city": null,
+            "zip": null,
+            "facebook": null,
+            "twitter": null,
+            "instagram": null,
+            "skype": null,
+            "website": null,
+            "total_spent": "0.0",
+            "average_spent": "0.0",
+            "highest_spent": "0.0",
+            "reservations_count": 0,
+            "campaigns_count": 0,
+            "guestlists_count": 0,
+            "cancellations": 0,
+            "last_reservation": null,
+            "last_visit": null,
+            "last_update": null,
+            "created_at": "2014-03-03T07:35:05-0800",
+            "visited_venue_ids": null,
+            "total_comp": null,
+            "no_shows": 0,
+            "avatar": {
+              "url": null,
+              "thumb_100": {
+                "url": null
+              },
+              "mobile_thumb": {
+                "url": null
+              },
+              "thumb_200": {
+                "url": null
+              }
+            },
+            "notes": [],
+            "tags": [],
+            "name": "John ",
+            "group_id": null
+          }
+        } //, { ... }
+      ]
+    }
+####
+
+Let's look at contents of **activity_log**. Those are array of elements which have the same format:
+####
+    {
+      "class_name": string,
+      "id": integer,
+      "action": string,
+      "data": 
+        {
+            // structured entry data
+        }
+    }
+####
+
+**class_name** is class name of changed entry. It can equal one of the following:
+####
+    "Contact", "Tag", "TagCategory", "Task", "LogMethod", "Notification", "Note", "Reservation", "StaticText", "UserVenue", "ContactQualification"
+####
+
+**id** is primary key value of changed entry
+
+**action** specifies what's happened to entry. It can equal one of three values: "create", "update" or "destroy"
+
+**data** presents whole entry after change. Its format depends of entry class.
+Notice: **data** is omitted if **action** equals "destroy"
+
+
+Let's continue. Update just created contact:
+####
+    $ curl -X PUT -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d contact[first_name]="Jack" https://beyondvip.com/api/v1/contacts/34659.json
+####
+
+Request last changes of contacts:
+####
+    $ # request 3
+    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d options[Contact][start_date]="2014-03-03T16:38:38GMT+01:00" https://beyondvip.com/api/v1/last_changes.json
+####
+
+Response should like the following:
+####
+    {
+      "status":0,
+      "timestamp":"2014-03-03T18:11:00GMT+01:00",
+      "message":null,
+      "activity_log": [
+        {
+          "id": 34659,
+          "action": "update",
+          "class_name": "Contact",
+          "data": {
+            "id": 34659,
+            "first_name": "Jack",
+            "last_name": null,
+            "title": null,
+            "state": "customer",
+            "avatar_mobile_thumb_url": null,
+            "gender": null,
+            "birthdate": null,
+            "organization": null,
+            "industry": null,
+            "ethnicity": null,
+            "sexual_preference": null,
+            "status": "no_level",
+            "email": "contact_381869795@example.com",
+            "phone": null,
+            "address": null,
+            "country": null,
+            "region": null,
+            "city": null,
+            "zip": null,
+            "facebook": null,
+            "twitter": null,
+            "instagram": null,
+            "skype": null,
+            "website": null,
+            "total_spent": "0.0",
+            "average_spent": "0.0",
+            "highest_spent": "0.0",
+            "reservations_count": 0,
+            "campaigns_count": 0,
+            "guestlists_count": 0,
+            "cancellations": 0,
+            "last_reservation": null,
+            "last_visit": null,
+            "last_update": null,
+            "created_at": "2014-03-03T07:35:05-0800",
+            "visited_venue_ids": null,
+            "total_comp": null,
+            "no_shows": 0,
+            "avatar": {
+              "url": null,
+              "thumb_100": {
+                "url": null
+              },
+              "mobile_thumb": {
+                "url": null
+              },
+              "thumb_200": {
+                "url": null
+              }
+            },
+            "notes": [],
+            "tags": [],
+            "name": "Jack ",
+            "group_id": null
+          }
+        }
+      ]
+    }
+####
+Notice 1: This response does not contain information about contact creation because **options\[Contact\]\[start_date\]** parameter from current request does not equal than from requests 1 and 2. It was given from response related request 2.
+
+Notice 2: Although just one contact field was updated, the response contained whole contact.
+
+
+
 
 #### {class_name#STRING}
     "Contact", "Tag", "TagCategory", "Task", "LogMethod", "Notification", "Note", "Reservation", "StaticText", "UserVenue", "ContactQualification"
@@ -136,6 +371,12 @@
       activity_log: [{log_element#HASH}, ...],
       message: string // if status is 1
     }
+
+  Examples
+
+    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d start_date="2014-03-03 05:29:17 +0000" https://beyondvip.com/api/v1/last_changes.json
+    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d options[Contact][start_date]="2014-03-03 05:29:17 +0000" https://beyondvip.com/api/v1/last_changes.json
+    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d options[ContactQualification][start_date]="2014-03-03 05:29:17 +0000" -d options[Notification][start_date]="2014-03-03 05:29:17 +0000"  https://beyondvip.com/api/v1/last_changes.json
 
 ### Last Changes Acknowledgment
     url: /last_changes/acknowledgment
