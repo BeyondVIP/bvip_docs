@@ -22,7 +22,8 @@ Venue represents place where [events](/api/events.md) are held. Venue filters
       instagram: string,
       venue_type: {venue_type#STRING},
       timezone: integer,
-      description: string
+      description: string,
+      logo_thumb_200_url: string
     }
 
 ### List available venues
