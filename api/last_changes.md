@@ -414,6 +414,7 @@ Timestamp parameter specifies time of device database state. For request local t
 ## Data samples
 
 Here is general form of data:
+
 ##### \{log_element#HASH\}
     {
       action: string, // "create", "update", "destroy"
@@ -422,7 +423,7 @@ Here is general form of data:
 
       // if action != 'destroy'
 
-      data: [{contact_last_changes#HASH}](#contact_last_changeshash) | {tag#HASH} | {tag_category#HASH} |
+      data: {contact_last_changes#HASH} | {tag#HASH} | {tag_category#HASH} |
         {task#HASH} | {log_method#HASH} | {notification#HASH} | {note#HASH} |
         {reservation#HASH} | {user_venue_last_changes#HASH} |
         {contact_qualification_last_changes#HASH}
@@ -430,6 +431,20 @@ Here is general form of data:
 
 ##### \{class_name#STRING\}
     "Contact", "Tag", "TagCategory", "Task", "LogMethod", "Notification", "Note", "Reservation", "StaticText", "UserVenue", "ContactQualification"
+
+Here is links to details of representations:
+
+ *  [{contact_last_changes#HASH}](#contact_last_changeshash)
+ *  [{user_venue_last_changes#HASH}](#user_venue_last_changeshash)
+ *  [{contact_qualification_last_changes#HASH}](#contact_qualification_last_changeshash)
+ *  [{tag#HASH}](/api/tags.md#taghash)
+ *  [{tag_category#HASH}](/api/tags.md#tag_categoryhash)
+ *  [{task#HASH}](/api/tasks.md#taskhash)
+ *  [{log_method#HASH}](/api/log_methods.md#log_methodhash)
+ *  [{notification#HASH}](/api/notifications.md#notificationhash)
+ *  [{note#HASH}](/api/notes.md#notehash)
+ *  [{reservation#HASH}](/api/reservations.md#reservationhash)
+
 
 ##### \{contact_last_changes#HASH\}
     {
