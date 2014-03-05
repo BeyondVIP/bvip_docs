@@ -1,7 +1,7 @@
 # Api::V1::ThermalReceipts
 Thermal Receipt represents what fields of reservations should be printed. They
- are set for each [venue](/api/v1/venues.md). Ordering and names are stored in
- [dictionaries](/api/v1/dictionaries.md) (key: **thermal_receipt_fields**).
+ are set for each [venue](/api/venues.md). Ordering and names are stored in
+ [dictionaries](/api/dictionaries.md) (key: **thermal_receipt_fields**).
 
 **fields** show which fields are active and will be printed
 
