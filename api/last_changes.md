@@ -20,7 +20,7 @@ Response should have the following format:
     }
 ####
 
-If **status** equals 1, go to [Solving status](#solving_status) for details. 
+If **status** equals 1, go to [Solving status](#solving-status) for details. 
 Otherwise it equals 0. Then **activity_log** key possibly contains changes.
 
 **timestamp** shows current server time. Clients keep it and use it for next 'Last Changes' request.
@@ -143,7 +143,7 @@ Let's look at contents of **activity_log**. Those are array of elements which ha
 
 **action** specifies what's happened to entry. It can equal to one of three values: "create", "update" or "destroy"
 
-**data** presents whole entry after change. Its format depends of entry class. See [Data Samples](#samples) section for details.
+**data** presents whole entry after change. Its format depends of entry class. See [Data Samples](#data-samples) section for details.
 Note that **data** is omitted if **action** equals "destroy"
 
 
@@ -422,7 +422,7 @@ Here is general form of data:
 
       // if action != 'destroy'
 
-      data: {contact_last_changes#HASH} | {tag#HASH} | {tag_category#HASH} |
+      data: [{contact_last_changes#HASH}](#contact_last_changeshash) | {tag#HASH} | {tag_category#HASH} |
         {task#HASH} | {log_method#HASH} | {notification#HASH} | {note#HASH} |
         {reservation#HASH} | {user_venue_last_changes#HASH} |
         {contact_qualification_last_changes#HASH}
