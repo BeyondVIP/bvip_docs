@@ -1,5 +1,5 @@
 # Api::V1::LastChanges
-### Basics
+## Basics
 ---
 'Last Changes' functionality is used to pull database changes from server.
 
@@ -143,11 +143,11 @@ Let's look at contents of **activity_log**. Those are array of elements which ha
 
 **action** specifies what's happened to entry. It can equal to one of three values: "create", "update" or "destroy"
 
-**data** presents whole entry after change. Its format depends of entry class.
+**data** presents whole entry after change. Its format depends of entry class. See [Data Samples](#samples) section for details.
 Note that **data** is omitted if **action** equals "destroy"
 
 
-**NOTICE:** It's required to push acknowledgment to server after every pulling changes and full data uploading. See [Acknowledgment Section](#acknowledgment) for details.
+**NOTICE:** It's required to push acknowledgment to server after every pulling changes and full data loading. See [Acknowledgment](#acknowledgment) section for details.
  
 
 Let's continue. Update just created contact:
@@ -325,15 +325,31 @@ Response:
 Note that response have information about contact deletion.
 
 
-### Parameters
+## Parameters
 ---
 Notice: these two parameters aren't used together.
 
 #### start_date
 It specifies what time needed changes start with.
 
-Usually mobile apps take parameter value from 'Last Changes' response related previous request.
-To take value for first request, clients push acknowledgment. See [Acknowledgment Section](#acknowledgment) for details.
+It is written in the following way:
+####
+    start_date="<timestamp>"
+####
+
+Timestamp can have one of the following formats:
+####
+    YYYY-MM-DDThh:mm:ssGMT(+|-)hh:mm
+    YYYY-MM-DD hh:mm:ss (+|-)hhmm
+####
+
+Timestamp examples:
+####
+    2014-03-03T16:38:38GMT+01:00
+    2014-03-03 05:29:17 -0300
+####
+
+Usually mobile apps take parameter value from 'Last Changes' response related previous request. For first request, clients use value from timestamp parameter of last [acknowledgment](#acknowledgment) request.
 
 Example of using:
 ####
@@ -344,7 +360,7 @@ Example of using:
 It specifies the same as start_date, but it applies to specified class.
 It is written in the following way:
 ####
-    options[<class name>][start_date]="<timestamp>"
+    options[<class name>][start_date]="<timestamp>" // the same timestamp format as start_date parameter
 ####
 
 Example of using:
@@ -357,30 +373,65 @@ It is possible to request changes from different classes together. In this case 
 ####
 
 
-### Solving status
+## Solving status
 ---
 Sometimes response comes with status equal to 1.
-It usually means that a client should upload full data from server and push [acknowledgment](#acknowledgment).
+It usually means that a client should load full data from server and push [acknowledgment](#acknowledgment).
 In this case, message entry can equal to one of the following:
     
  *  "No achievements at some classes"
  *  "No achievements: '<class name\>' "
  *  "Unknown device"
+ *  "Too many changes"
 
-There are other cases that provide equation status to 1. They happen if client send non-valid parameters in 'Last Changes' request. Then message entry can equal to one of the following:
+There are other cases that provide equation status to 1. They happen if client send non-valid parameters. Then message entry can equal to one of the following:
 
  *  "Unknown params" - none of the [parameters](#parameters) is not specified
  *  "Invalid params" - one of the [parameters](#parameters) is not valid
+ *  "Invalid timestamp" - start_date value have wrong format
+ *  "Invalid timestamp at <class name\>" - value of options[<class name\>][start_date] have wrong format
 
 
-### Acknowledgment
+## Acknowledgment
 ---
+Clients should push acknowledgment to server after every full data loading and requesting last changes. It allows server to prevent pushing outdated changes to clients. Client can't pull changes when he haven't acknowledgment at server. If client's permissions change then client's acknowledgment expires. In this client case have to load full data and push new acknowledgment.
+
+Notice: client should push acknowledgment before first 'Last Changes' request.
+
+Request example:
+####
+    curl -X POST -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d timestamp="2014-03-04 05:29:17 +0000" https://beyondvip.com/api/v1/last_changes/acknowledgment.json
+####
+
+Response:
+####
+    { message: "Success" }
+####
+
+Timestamp parameter specifies time of device database state. For request local time is used. This parameter have the same format as from [Parameters](#parameters) section.
 
 
-#### {class_name#STRING}
+## Data samples
+---
+Here is general form of data:
+##### \{log_element#HASH\}
+    {
+      action: string, // "create", "update", "destroy"
+      id: integer,
+      class_name: {class_name#STRING},
+
+      // if action != 'destroy'
+
+      data: {contact_last_changes#HASH} | {tag#HASH} | {tag_category#HASH} |
+        {task#HASH} | {log_method#HASH} | {notification#HASH} | {note#HASH} |
+        {reservation#HASH} | {user_venue_last_changes#HASH} |
+        {contact_qualification_last_changes#HASH}
+    }
+
+##### \{class_name#STRING\}
     "Contact", "Tag", "TagCategory", "Task", "LogMethod", "Notification", "Note", "Reservation", "StaticText", "UserVenue", "ContactQualification"
 
-#### {contact_last_changes#HASH}
+##### \{contact_last_changes#HASH\}
     {
       id: integer,
       first_name: string,
@@ -433,7 +484,7 @@ There are other cases that provide equation status to 1. They happen if client s
       visited_venue_ids : array of integers
     }
 
-#### {user_venue_last_changes#HASH}
+##### \{user_venue_last_changes#HASH\}
     {
       venue_id: integer,
       id: integer,
@@ -441,7 +492,7 @@ There are other cases that provide equation status to 1. They happen if client s
       venue_name: string
     }
 
-#### {contact_qualification_last_changes#HASH}
+##### \{contact_qualification_last_changes#HASH\}
     {
       contact_id: integer,
       venue_id: integer,
@@ -449,89 +500,5 @@ There are other cases that provide equation status to 1. They happen if client s
     }
 
 
-#### {log_element#HASH}
-    {
-      action: string, // "create", "update", "destroy"
-      id: integer,
-      class_name: {class_name#STRING},
 
-      // if action != 'destroy'
 
-      data: {contact_last_changes#HASH} | {tag#HASH} | {tag_category#HASH} |
-        {task#HASH} | {log_method#HASH} | {notification#HASH} | {note#HASH} |
-        {reservation#HASH} | {user_venue_last_changes#HASH} |
-        {contact_qualification_last_changes#HASH}
-    }
-
-### Take changes since '2013-02-12 8:20:00'
-    url: /last_changes(.:format)
-    format: json
-    method: GET
-
-  Request
-
-    auth_token: string
-    start_date: string, // optional, example: "2013-02-12T08:20:00GMT+04:00"
-    options: {
-      "Contact": {
-        "start_date": string,
-      },
-      "Tag": {
-        "start_date": string,
-      },
-      "TagCategory": {
-        "start_date": string,
-      },
-      "Task": {
-        "start_date": string,
-      },
-      "LogMethod": {
-        "start_date": string,
-      },
-      "Notification": {
-        "start_date": string,
-      },
-      "Note": {
-        "start_date": string,
-      },
-      "Reservation": {
-        "start_date": string,
-      },
-      "UserVenue": {
-        "start_date": string,
-      },
-      "ContactQualification": {
-        "start_date": string,
-      }
-    }
-
-  Response
-
-    {
-      status: integer // 0 or 1
-      timestamp: timestamp,
-      activity_log: [{log_element#HASH}, ...],
-      message: string // if status is 1
-    }
-
-  Examples
-
-    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d start_date="2014-03-03 05:29:17 +0000" https://beyondvip.com/api/v1/last_changes.json
-    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d options[Contact][start_date]="2014-03-03 05:29:17 +0000" https://beyondvip.com/api/v1/last_changes.json
-    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d options[ContactQualification][start_date]="2014-03-03 05:29:17 +0000" -d options[Notification][start_date]="2014-03-03 05:29:17 +0000"  https://beyondvip.com/api/v1/last_changes.json
-
-### Last Changes Acknowledgment
-    url: /last_changes/acknowledgment
-    format: json
-    method: POST
-
-  Request
-
-    auth_token: string
-    timestamp: timestamp, // example: "2013-02-12T08:20:00GMT+04:00"
-
-  Response
-
-    {
-      message: "Success"
-    }
