@@ -380,7 +380,7 @@ It usually means that a client should load full data from server and push [ackno
 In this case, message entry can equal to one of the following:
     
  *  "No achievements at some classes"
- *  "No achievements: '<class name\>' "
+ *  "No achievements: '\<class name\>' "
  *  "Unknown device"
  *  "Too many changes"
 
@@ -389,7 +389,7 @@ There are other cases that provide equation status to 1. They happen if client s
  *  "Unknown params" - none of the [parameters](#parameters) is not specified
  *  "Invalid params" - one of the [parameters](#parameters) is not valid
  *  "Invalid timestamp" - start_date value have wrong format
- *  "Invalid timestamp at <class name\>" - value of options[<class name\>][start_date] have wrong format
+ *  "Invalid timestamp at \<class name\>" - value of options\[\<class name\>\][start_date] have wrong format
 
 
 ## Acknowledgment
