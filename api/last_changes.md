@@ -1,6 +1,6 @@
 # Api::V1::LastChanges
 ## Basics
----
+
 'Last Changes' functionality is used to pull database changes from server.
 
 For example, it is needed to receive any changes since March, 03 2014.
@@ -326,7 +326,7 @@ Note that response have information about contact deletion.
 
 
 ## Parameters
----
+
 Notice: these two parameters aren't used together.
 
 #### start_date
@@ -374,7 +374,7 @@ It is possible to request changes from different classes together. In this case 
 
 
 ## Solving status
----
+
 Sometimes response comes with status equal to 1.
 It usually means that a client should load full data from server and push [acknowledgment](#acknowledgment).
 In this case, message entry can equal to one of the following:
@@ -393,7 +393,7 @@ There are other cases that provide equation status to 1. They happen if client s
 
 
 ## Acknowledgment
----
+
 Clients should push acknowledgment to server after every full data loading and requesting last changes. It allows server to prevent pushing outdated changes to clients. Client can't pull changes when he haven't acknowledgment at server. If client's permissions change then client's acknowledgment expires. In this client case have to load full data and push new acknowledgment.
 
 Notice: client should push acknowledgment before first 'Last Changes' request.
@@ -412,7 +412,7 @@ Timestamp parameter specifies time of device database state. For request local t
 
 
 ## Data samples
----
+
 Here is general form of data:
 ##### \{log_element#HASH\}
     {
