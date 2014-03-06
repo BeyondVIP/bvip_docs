@@ -24,3 +24,4 @@
 * [**Last Changes**](/api/last_changes.md)
 * [**Push Tokens**](/api/push_tokens.md)
 * [**APN Tokens**](/api/apn_tokens.md)
+* [**Thermal Receipts**](/api/thermal_receipts.md)
