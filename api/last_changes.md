@@ -136,7 +136,7 @@ Let's look at contents of **activity_log**. Those are array of elements which ha
 
 **class_name** is class name of changed entry. It can equal to one of the following:
 ####
-    "Contact", "Tag", "TagCategory", "Task", "LogMethod", "Notification", "Note", "Reservation", "StaticText", "UserVenue", "ContactQualification"
+    "Contact", "Tag", "TagCategory", "Task", "LogMethod", "Notification", "Note", "Reservation", "StaticText", "UserVenue", "ContactQualification", "Event"
 ####
 
 **id** is primary key value of changed entry
@@ -426,7 +426,7 @@ Here is general form of data:
       data: {contact_last_changes#HASH} | {tag#HASH} | {tag_category#HASH} |
         {task#HASH} | {log_method#HASH} | {notification#HASH} | {note#HASH} |
         {reservation#HASH} | {user_venue_last_changes#HASH} |
-        {contact_qualification_last_changes#HASH}
+        {contact_qualification_last_changes#HASH} | {event_last_changes#HASH}
     }
 
 ##### \{class_name#STRING\}
@@ -444,6 +444,7 @@ Here is links to details of representations:
  *  [{notification#HASH}](/api/notifications.md#notificationhash)
  *  [{note#HASH}](/api/notes.md#notehash)
  *  [{reservation#HASH}](/api/reservations.md#reservationhash)
+ *  [{event_last_changes#HASH}](#event_last_changeshash)
 
 
 ##### \{contact_last_changes#HASH\}
@@ -514,6 +515,122 @@ Here is links to details of representations:
       status: string
     }
 
-
-
-
+##### \{event_last_changes#HASH\}
+    {
+      "id": 827,
+      "venue_id": 1,
+      "name": "123",
+      "date": "2014-04-01T01:00:00-0700",
+      "location": "901 N. Rush St, Chicago, IL",
+      "dress_code": null,
+      "age": "21",
+      "description": "123",
+      "poster_url": null,
+      "poster_small_url": null,
+      "poster_medium_url": null,
+      "poster_list_thumb_url": null,
+      "poster_preview_thumb_url": null,
+      "poster_mobile_thumb_url": null,
+      "reservation_settings_template_id": 169,
+      "end_time": "2014-04-02T01:00:00-0700",
+      "state": "active",
+      "tickets_url": null,
+      "started": false,
+      "facebook_token_required": true,
+      "global_fee": 2.5,
+      "venue_fee": 0.0,
+      "artists": [
+        {
+          "id": 3,
+          "name": "12th Planet",
+          "avatar_url": "https://d22a9btz81zdvf.cloudfront.net/uploads/artist/avatar/3/thumb_100_12TH-PLANET_1.jpg",
+          "description": "description"
+        }
+      ],
+      "general_admission_template": {
+        "id": 2,
+        "name": "Test GA Template",
+        "general_admission_entrance_types": [
+          {
+            "id": 3,
+            "male_price": "20.0",
+            "female_price": "17.0",
+            "title": "Item title"
+          }
+        ],
+        "venue_id": 1,
+        "removable": false
+      },
+      "sections": [
+        {
+          "id": 551,
+          "name": "Dance Floor",
+          "available_places": 1,
+          "total_places": 1,
+          "color": null,
+          "reservation_room_id": 148,
+          "reservation_room_name": "Main Room",
+          "minimum": 123,
+          "description": ""
+        }
+      ],
+      "tables": [
+        {
+          "capacity": 21,
+          "id": 2471,
+          "name": "21",
+          "reservation_section_id": 551,
+          "shape": "circle",
+          "size": "small",
+          "coordinates": {
+            "x": 495,
+            "y": 250
+          }
+        }
+      ],
+      "guestlist_types": [
+        {
+          "id": 3,
+          "name": "Test Item",
+          "price_per_person": 20.0,
+          "person_count": 200,
+          "gender_type": "male",
+          "default": true,
+          "guestlist_template_id": 2
+        },
+        {
+          "id": 4,
+          "name": "Test female item",
+          "price_per_person": 15.0,
+          "person_count": 15,
+          "gender_type": "female",
+          "default": true,
+          "guestlist_template_id": 2
+        },
+        {
+          "id": 78,
+          "name": "comp",
+          "price_per_person": 0.0,
+          "person_count": 100,
+          "gender_type": "male",
+          "default": false,
+          "guestlist_template_id": 2
+        },
+        {
+          "id": 79,
+          "name": "comp",
+          "price_per_person": 0.0,
+          "person_count": 100,
+          "gender_type": "female",
+          "default": false,
+          "guestlist_template_id": 2
+        }
+      ],
+      "reservation_rooms": [
+        {
+          "id": 148,
+          "name": "Main Room",
+          "background_url": null
+        }
+      ]
+    }
