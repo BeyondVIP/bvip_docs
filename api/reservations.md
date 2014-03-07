@@ -92,7 +92,8 @@ Please note - you couldn't create 2 reservations for the same contact and the
       event_id: integer,
       event_info: {
         name: string,
-        date: timestamp
+        date: timestamp,
+        end_time: timestamp
       },
       host_id: integer,
       id: integer,

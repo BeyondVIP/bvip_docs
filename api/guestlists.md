@@ -36,7 +36,8 @@
       event_id: integer,
       event_info: {
         name: string,
-        date: timestamp
+        date: timestamp,
+        end_time: timestamp
       },
       guestlist_template_id: integer,
       id: integer,
