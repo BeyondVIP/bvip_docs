@@ -1,4 +1,24 @@
 # Api::V1::Guestlists
+Guestlist entity represents that [contact](/api/contacts.md) may come to
+ specific [event](/api/events.md).
+
+Please note - you couldn't create 2 guestlists for the same contact and the
+ same event.
+
+**user_id** represents originator – usually [user](/api/users.md) that
+ creates guestlist.
+
+**notes** – [notes](/api/notes.md) for guestlist.
+
+**contact_info** – read-only information about contact for which reservation is
+ made.
+
+**event_info** – read-only information about event.
+
+**type_for_females_id** and **type_for_males_id** show which guestlist types are
+ chosen for guestlist.
+
+**person_count** at guestlist_type limits guestlist male and female counts.
 
 #### {tense#STRING}
     'past', 'upcoming'
@@ -6,8 +26,16 @@
 #### {stage#STRING}
     'win', 'loss', 'denied'
 
+#### {status#STRING}
+    'not_confirmed', 'confirmed', 'canceled', 'disqualified',
+    'group_disqualify', 'all_arrived', 'partially_arrived', 'no_show', 'no_id',
+    'fake_id', 'dress_code', 'over_intox'
+
 #### {state#STRING}
     'active', 'cancelled'
+
+#### {gender_type#STRING}
+    'male', 'female'
 
 #### [{note#HASH}](/api/notes.md#notehash)
 
@@ -16,7 +44,6 @@
       actual_count_females: integer,
       actual_count_males: integer,
       approved: boolean,
-      company_id: integer,
       contact_id: integer,
       contact_info: {
         name: string,
@@ -39,13 +66,12 @@
         date: timestamp,
         end_time: timestamp
       },
-      guestlist_template_id: integer,
       id: integer,
       last_stage: {stage#STRING},
-      last_status: string,
+      last_status: {status#STRING},
       stage: {stage#STRING},
       state: {state#STRING},
-      status: string,
+      status: {status#STRING},
       tally: boolean,
       type_for_females_id: integer,
       type_for_males_id: integer,
@@ -69,7 +95,7 @@
       name: string,
       price_per_person: float,
       person_count: integer,
-      gender_type: string,
+      gender_type: {gender_type#STRING},
       default: boolean,
       guestlist_template_id: integer
     }
@@ -148,7 +174,7 @@
 
     auth_token: string
     guestlist: {
-      status: string,
+      status: {status#STRING},
       count_males: integer,
       count_females: integer,
       note: text,
