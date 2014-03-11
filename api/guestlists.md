@@ -151,7 +151,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
       state: string, // optional
       count_males: integer,
       count_females: integer,
-      note: text,
+      notes: array of strings,
       type_for_females_id: integer,
       type_for_males_id: integer,
       qualification: string
@@ -177,7 +177,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
       status: {status#STRING},
       count_males: integer,
       count_females: integer,
-      note: text,
+      notes: array of strings,
       type_for_females_id: integer,
       type_for_males_id: integer,
       qualification: string,
