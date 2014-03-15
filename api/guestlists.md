@@ -154,7 +154,9 @@ Please note - you couldn't create 2 guestlists for the same contact and the
       notes: array of strings,
       type_for_females_id: integer,
       type_for_males_id: integer,
-      qualification: string
+      qualification: string,
+      status: {status#STRING},
+      user_id: integer
     }
 
   Response
@@ -182,7 +184,9 @@ Please note - you couldn't create 2 guestlists for the same contact and the
       type_for_males_id: integer,
       qualification: string,
       actual_count_males: integer,   // if these are present guestlist will be closed out
-      actual_count_females: integer  // could be present only for past events
+      actual_count_females: integer,  // could be present only for past events
+      status: {status#STRING},
+      user_id: integer
     }
 
   Response
