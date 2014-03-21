@@ -178,6 +178,7 @@ You can create [reservations](/api/reservations.md),
       skype: string,
       website: string,
       tag_ids: array of integers,
+      avatar: <file>,
       contact_owners: [ // change contact owners at particular venue
         {
           venue_id: integer,
@@ -241,6 +242,7 @@ You can create [reservations](/api/reservations.md),
       skype: string,
       website: string,
       tag_ids: array of integers,
+      avatar: <file>,
       contact_owners: [ // change contact owners at particular venue
         {
           venue_id: integer,

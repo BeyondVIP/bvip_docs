@@ -142,10 +142,29 @@ Please note - you couldn't create 2 guestlists for the same contact and the
     format: json
     method: POST
 
+  Description
+
+  If 'contact_ids' parameter is set then guestlists are created for every
+   contact whose id is placed. Alternatively 'contact' parameter can be set. In
+   that case 'contact_owners' can be changed if they are present in 'contact'.
+
   Request
 
     auth_token: string
-    contact_ids: array of integers
+    contact_ids: array of integers // not needed if 'contact' parameter is set
+    contact: { // this can be set instead of 'contact_ids' parameter
+      name: string,
+      email: string,
+      phone: string,
+      contact_owners: [ // change contact owners at particular venue
+        {
+          venue_id: integer,
+          user_id: integer
+        },
+        ...
+      ],
+      tag_ids: array of integers
+    }
     guestlist: {
       event_id: integer,
       state: string, // optional
