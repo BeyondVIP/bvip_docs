@@ -51,6 +51,7 @@ User is the person who works at [venues](/api/venues.md). User can own
 
     auth_token: string
     ids: array of integers //optional
+    promoters: 'true' //optional
 
   Response
 

@@ -183,8 +183,8 @@ Please note - you couldn't create 2 reservations for the same contact and the
     contact_ids: array of integers // not needed if 'contact' parameter is set
     contact: { // this can be set instead of 'contact_ids' parameter
       name: string,
-      email: string,
-      phone: string,
+      email: string, // optional, if originator is promoter
+      phone: string, // optional, if originator is promoter
       contact_owners: [ // change contact owners at particular venue
         {
           venue_id: integer,
