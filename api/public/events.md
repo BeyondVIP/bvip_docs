@@ -132,4 +132,4 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
 
   Example
 
-    $ curl -X GET -d date_start="2014-01-01" https://beyondvip.com/api/public/events.json
+    $ curl -X GET -d company_token=rsP2uhgqTdmdXAcKqKw9 -d date_start="2014-01-01" https://beyondvip.com/api/public/events.json
