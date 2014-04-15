@@ -61,7 +61,7 @@ Venue represents place where [events](/api/public/events.md) are held.
 
   Example
 
-    $ curl -X GET -d company_token=rsP2uhgqTdmdXAcKqKw9 https://beyondvip.com/api/public/venues.json
+    $ curl -X GET -d company_token=rsP2uhgqTdmdXAcKqKw9 https://app.beyondvip.com/api/public/venues.json
 
 ### Get venue
     url: /api/public/venues/:id(.:format)
@@ -74,4 +74,4 @@ Venue represents place where [events](/api/public/events.md) are held.
 
   Example
 
-    $ curl -X GET -d company_token=rsP2uhgqTdmdXAcKqKw9 https://beyondvip.com/api/public/venues/1.json
+    $ curl -X GET -d company_token=rsP2uhgqTdmdXAcKqKw9 https://app.beyondvip.com/api/public/venues/1.json

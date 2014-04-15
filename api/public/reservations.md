@@ -31,3 +31,7 @@ Please note - you couldn't create 2 reservations for the same contact and the
   Response
 
     {reservation#HASH}
+
+  Example
+
+    $ curl -X POST -d company_token=rsP2uhgqTdmdXAcKqKw9 -d contact[first_name]=John -d contact[last_name]=Doe -d contact[email]=john.doe@example.com -d reservation[event_id]=759 -d reservation[count_males]=1 -d reservation[count_females]=1 https://app.beyondvip.com/api/public/reservations.json

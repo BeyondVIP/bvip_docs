@@ -11,10 +11,11 @@ All requests are made using public key (company_token) which can be found at the
  web application settings.
  First, venues should be retrieved, e.g.
 
-    $ curl -X GET -d company_token=rsP2uhgqTdmdXAcKqKw9 https://beyondvip.com/api/public/venues.json
+    $ curl -X GET -d company_token=rsP2uhgqTdmdXAcKqKw9 https://app.beyondvip.com/api/public/venues.json
 
- Then events for specific venue can be retrieved
+ Then events for specific venue can be retrieved (future events if not_passed
+ parameter is 1)
 
-    $ curl -X GET -d company_token=rsP2uhgqTdmdXAcKqKw9 -d venue_id=1 https://beyondvip.com/api/public/events.json
+    $ curl -X GET -d company_token=rsP2uhgqTdmdXAcKqKw9 -d venue_id=1 -d not_passed=1 https://app.beyondvip.com/api/public/events.json
 
  After that reservations, guestlists and orders can be made for specific event.
