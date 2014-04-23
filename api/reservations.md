@@ -119,7 +119,8 @@ Please note - you couldn't create 2 reservations for the same contact and the
       requested_table_ids: array of integers,
       assigned_table_ids: array of integers,
       contact_degree: array of strings,
-      bottles: integer // bottles count
+      bottles: integer // bottles count,
+      closeout: boolean // reservations closeout status
     }
 
 #### Validations
