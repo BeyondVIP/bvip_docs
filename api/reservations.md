@@ -118,7 +118,8 @@ Please note - you couldn't create 2 reservations for the same contact and the
       pre_paid: float, // prepaid order (using staff's personal page)
       requested_table_ids: array of integers,
       assigned_table_ids: array of integers,
-      contact_degree: array of strings
+      contact_degree: array of strings,
+      bottles: integer // bottles count
     }
 
 #### Validations
@@ -217,7 +218,8 @@ Please note - you couldn't create 2 reservations for the same contact and the
       notes: array of strings,
       check_number: string,
       actual_spent: float,
-      contact_degree: array of strings
+      contact_degree: array of strings,
+      bottles: integer
     }
 
   Response
@@ -260,7 +262,8 @@ Please note - you couldn't create 2 reservations for the same contact and the
       notes: array of strings,
       check_number: string,
       actual_spent: float,
-      open: boolean,
+      closeout: boolean,
+      bottles: integer,
       contact_degree: array of strings
     }
 
