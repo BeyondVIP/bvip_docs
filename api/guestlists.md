@@ -15,8 +15,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
 
 **event_info** – read-only information about event.
 
-**type_for_females_id** and **type_for_males_id** show which guestlist types are
- chosen for guestlist.
+**guestlist_type_id** shows which guestlist type is chosen for guestlist.
 
 **person_count** at guestlist_type limits guestlist male and female counts.
 
@@ -33,9 +32,6 @@ Please note - you couldn't create 2 guestlists for the same contact and the
 
 #### {state#STRING}
     'active', 'cancelled'
-
-#### {gender_type#STRING}
-    'male', 'female'
 
 #### [{note#HASH}](/api/notes.md#notehash)
 
@@ -73,29 +69,27 @@ Please note - you couldn't create 2 guestlists for the same contact and the
       state: {state#STRING},
       status: {status#STRING},
       tally: boolean,
-      type_for_females_id: integer,
-      type_for_males_id: integer,
       updated_at: timestamp,
       user_id: integer,
       event_date: timestamp,
       event_name: string,
       contact_name: string,
-      type_for_males_name: string,
-      type_for_females_name: string,
       note: text,
       notes: [{note#HASH}, ...],
       qualification: string,
       status_name: string,
-      venue_id: integer
+      venue_id: integer,
+      guestlist_type_id: integer
     }
 
 #### {guestlist_type#HASH}
     {
       id: integer,
       name: string,
-      price_per_person: float,
-      person_count: integer,
-      gender_type: {gender_type#STRING},
+      price_males: float,
+      price_females: float,
+      count_males: integer,
+      count_females: integer,
       default: boolean,
       guestlist_template_id: integer
     }
@@ -171,11 +165,10 @@ Please note - you couldn't create 2 guestlists for the same contact and the
       count_males: integer,
       count_females: integer,
       notes: array of strings,
-      type_for_females_id: integer,
-      type_for_males_id: integer,
       qualification: string,
       status: {status#STRING},
-      user_id: integer
+      user_id: integer,
+      guestlist_type_id: integer
     }
 
   Response
@@ -184,7 +177,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d guestlist[event_id]=19 -d guestlist[count_males]=1 -d guestlist[count_females]=1 -d guestlist[type_for_males_id]=1 -d guestlist[type_for_females_id]=2 https://beyondvip.com/api/v1/guestlists.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d guestlist[event_id]=19 -d guestlist[count_males]=1 -d guestlist[count_females]=1 -d guestlist[guestlist_type_id]=1 https://beyondvip.com/api/v1/guestlists.json
 
 ### Update
     url: /api/v1/guestlists/:id(.:format)
@@ -199,13 +192,12 @@ Please note - you couldn't create 2 guestlists for the same contact and the
       count_males: integer,
       count_females: integer,
       notes: array of strings,
-      type_for_females_id: integer,
-      type_for_males_id: integer,
       qualification: string,
       actual_count_males: integer,   // if these are present guestlist will be closed out
       actual_count_females: integer,  // could be present only for past events
       status: {status#STRING},
-      user_id: integer
+      user_id: integer,
+      guestlist_type_id: integer
     }
 
   Response
