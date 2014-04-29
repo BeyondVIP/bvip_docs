@@ -41,7 +41,7 @@ Note entity represents short description or comment for [reservation](/api/reser
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/notes.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/notes.json
 
 ### Get
     url: /api/v1/notes/:id(.:format)
@@ -58,7 +58,7 @@ Note entity represents short description or comment for [reservation](/api/reser
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/notes/1.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/notes/1.json
 
 ### Create note
     url: /api/v1/notes(.:format)
@@ -82,7 +82,7 @@ Note entity represents short description or comment for [reservation](/api/reser
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d note[text]=Text -d note[reservation_id]=259 https://beyondvip.com/api/v1/notes.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d note[text]=Text -d note[reservation_id]=259 https://app.beyondvip.com/api/v1/notes.json
 
 ### Update note
     url: /api/v1/notes/:id(.:format)
@@ -107,7 +107,7 @@ Note entity represents short description or comment for [reservation](/api/reser
 
   Example
 
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d note[text]="New Text" https://beyondvip.com/api/v1/notes/2.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d note[text]="New Text" https://app.beyondvip.com/api/v1/notes/2.json
 
 ### Delete note
     url: /api/v1/notes/:id(.:format)
@@ -120,4 +120,4 @@ Note entity represents short description or comment for [reservation](/api/reser
 
   Example
 
-    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/notes/2.json
+    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/notes/2.json

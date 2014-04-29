@@ -41,7 +41,7 @@ Venue represents place where [events](/api/events.md) are held. Venue filters
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/venues/list.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/venues/list.json
 
 ### Set venue filter for staff
     url: /api/v1/venues/set_filters(.:format)
@@ -59,4 +59,4 @@ Venue represents place where [events](/api/events.md) are held. Venue filters
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d venue_ids="1,2" https://beyondvip.com/api/v1/venues/set_filters.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d venue_ids="1,2" https://app.beyondvip.com/api/v1/venues/set_filters.json

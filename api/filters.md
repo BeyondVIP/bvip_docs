@@ -29,7 +29,7 @@
     [{filter_pattern#HASH}, ...]
 
     example:
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/filters.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/filters.json
 
 ### Create filter pattern
     url: /api/v1/filters(.:format)
@@ -49,7 +49,7 @@
     {filter_pattern#HASH}
 
     example:
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d filter_pattern[name]=Name -d filter_pattern[filters][][is_included]=is -d filter_pattern[filters][][key]=provider -d filter_pattern[filters][][value][]=Google https://beyondvip.com/api/v1/filters.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d filter_pattern[name]=Name -d filter_pattern[filters][][is_included]=is -d filter_pattern[filters][][key]=provider -d filter_pattern[filters][][value][]=Google https://app.beyondvip.com/api/v1/filters.json
 
 ### Update filter pattern
     url: /api/v1/filters/:id(.:format)
@@ -66,7 +66,7 @@
     {filter_pattern#HASH}
 
     example:
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d filter_pattern[name]="New Name" https://beyondvip.com/api/v1/filters/2.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d filter_pattern[name]="New Name" https://app.beyondvip.com/api/v1/filters/2.json
 
 ### Delete filter pattern
     url: /api/v1/filters/:id(.:format)
@@ -82,4 +82,4 @@
     { message: "The filter pattern was successfully deleted" }
 
     example:
-    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/filters/2.json
+    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/filters/2.json

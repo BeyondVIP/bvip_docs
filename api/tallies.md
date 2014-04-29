@@ -27,7 +27,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d event_id=19 https://beyondvip.com/api/v1/tallies.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d event_id=19 https://app.beyondvip.com/api/v1/tallies.json
 
 ### Update
     url: /api/v1/tallies/:id(.:format)
@@ -48,4 +48,4 @@
 
   Example
 
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d tally[actual_count_males]=1 https://beyondvip.com/api/v1/tallies/1.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d tally[actual_count_males]=1 https://app.beyondvip.com/api/v1/tallies/1.json

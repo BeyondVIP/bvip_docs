@@ -39,7 +39,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/logs.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/logs.json
 
 ### Create
     url: /api/v1/logs(.:format)
@@ -67,7 +67,7 @@
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_id=352 -d task_id=1 -d log[kind]=call -d log[date]="2014-01-01T20:00:00-0800" https://beyondvip.com/api/v1/logs.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_id=352 -d task_id=1 -d log[kind]=call -d log[date]="2014-01-01T20:00:00-0800" https://app.beyondvip.com/api/v1/logs.json
 
 ### Update
     url: /api/v1/logs/:id(.:format)
@@ -93,4 +93,4 @@
 
   Example
 
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d log[date]="2014-01-02T20:00:00-0800" https://beyondvip.com/api/v1/logs/1.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d log[date]="2014-01-02T20:00:00-0800" https://app.beyondvip.com/api/v1/logs/1.json

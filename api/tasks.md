@@ -53,7 +53,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/tasks.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/tasks.json
 
 ### Get
     url: /api/v1/tasks/:id(.:format)
@@ -70,7 +70,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/tasks/1.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/tasks/1.json
 
 ### Create
     url: /api/v1/tasks(.:format)
@@ -92,7 +92,7 @@
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d task[category]="Follow Up" -d task[date]="2014-01-31" https://beyondvip.com/api/v1/tasks.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d task[category]="Follow Up" -d task[date]="2014-01-31" https://app.beyondvip.com/api/v1/tasks.json
 
 ### Update
     url: /api/v1/tasks/:id(.:format)
@@ -113,7 +113,7 @@
 
   Example
 
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d task[date]="2014-01-25" https://beyondvip.com/api/v1/tasks/2.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d task[date]="2014-01-25" https://app.beyondvip.com/api/v1/tasks/2.json
 
 ### Delete
     url: /api/v1/tasks/:id(.:format)
@@ -130,4 +130,4 @@
 
   Example
 
-    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/tasks/2.json
+    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/tasks/2.json

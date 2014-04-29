@@ -19,8 +19,8 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d type=terms https://beyondvip.com/api/v1/static_text
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/static_text/terms
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d type=terms https://app.beyondvip.com/api/v1/static_text
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/static_text/terms
 
 ### Get only text by type
     url: /api/v1/static_texts(.:format)
@@ -38,4 +38,4 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d type=terms https://beyondvip.com/api/v1/static_texts.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d type=terms https://app.beyondvip.com/api/v1/static_texts.json

@@ -125,7 +125,7 @@ You can create [reservations](/api/reservations.md),
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/contacts.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/contacts.json
 
 ### Get
     url: /api/v1/contacts/:id(.:format)
@@ -143,7 +143,7 @@ You can create [reservations](/api/reservations.md),
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/contacts/1.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/contacts/1.json
 
 ### Create
     url: /api/v1/contacts(.:format)
@@ -207,7 +207,7 @@ You can create [reservations](/api/reservations.md),
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact[email]=contact@example.com -d contact[first_name]="John" https://beyondvip.com/api/v1/contacts.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact[email]=contact@example.com -d contact[first_name]="John" https://app.beyondvip.com/api/v1/contacts.json
 
 ### Update
     url: /api/v1/contacts/:id(.:format)
@@ -266,7 +266,7 @@ You can create [reservations](/api/reservations.md),
 
   Example
 
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact[first_name]="Jack" https://beyondvip.com/api/v1/contacts/2.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact[first_name]="Jack" https://app.beyondvip.com/api/v1/contacts/2.json
 
 ### Import
     url: /api/v1/contacts/import(.:format)
@@ -284,7 +284,7 @@ You can create [reservations](/api/reservations.md),
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contacts=<file.vcf> https://beyondvip.com/api/v1/contacts/import.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contacts=<file.vcf> https://app.beyondvip.com/api/v1/contacts/import.json
 
 ### Get expenditures
     url: /api/v1/contacts/:id/expenditures(.:format)
@@ -313,7 +313,7 @@ You can create [reservations](/api/reservations.md),
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/contacts/1/expenditures.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/contacts/1/expenditures.json
 
 ### Set qualification status by venue
     url: /api/v1/contacts/:id/set_qualification(.:format)
@@ -336,7 +336,7 @@ You can create [reservations](/api/reservations.md),
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d venue_id=1 -d status=qualified https://beyondvip.com/api/v1/contacts/1/set_qualification.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d venue_id=1 -d status=qualified https://app.beyondvip.com/api/v1/contacts/1/set_qualification.json
 
 ### Delete contact
     url: /api/v1/contacts/:id(.:format)
@@ -356,7 +356,7 @@ You can create [reservations](/api/reservations.md),
 
   Example
 
-    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/contacts/1.json
+    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/contacts/1.json
 
 ### Search contact
     url: /api/v1/contacts(.:format)
@@ -377,4 +377,4 @@ You can create [reservations](/api/reservations.md),
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d search[email]=mail  https://beyondvip.com/api/v1/contacts.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d search[email]=mail  https://app.beyondvip.com/api/v1/contacts.json
