@@ -25,3 +25,5 @@
 * [**Push Tokens**](/api/push_tokens.md)
 * [**APN Tokens**](/api/apn_tokens.md)
 * [**Thermal Receipts**](/api/thermal_receipts.md)
+* [**Promoters**](/api/promoters.md)
+
