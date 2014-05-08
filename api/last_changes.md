@@ -7,7 +7,7 @@ For example, it is needed to receive any changes since March, 03 2014.
 First, the following request is used:
 ####
     $ # request 1
-    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d start_date="2014-03-03 00:00:00 +0000" https://beyondvip.com/api/v1/last_changes.json
+    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d start_date="2014-03-03 00:00:00 +0000" https://app.beyondvip.com/api/v1/last_changes.json
 ####
 
 Response should have the following format:
@@ -39,13 +39,13 @@ Let's suppose that **activity_log** does not contain changes:
 
 Let's create a contact:
 ####
-    $  curl -X POST -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d contact[email]=contact_`date +%N`@example.com -d contact[first_name]="John" https://beyondvip.com/api/v1/contacts.json
+    $  curl -X POST -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d contact[email]=contact_`date +%N`@example.com -d contact[first_name]="John" https://app.beyondvip.com/api/v1/contacts.json
 ####
 
 And then request:
 ####
     $ # request 2
-    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d start_date="2014-03-03 00:00:00 +0000" https://beyondvip.com/api/v1/last_changes.json
+    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d start_date="2014-03-03 00:00:00 +0000" https://app.beyondvip.com/api/v1/last_changes.json
 ####
 
 Response should like the following:
@@ -152,13 +152,13 @@ Note that **data** is omitted if **action** equals "destroy"
 
 Let's continue. Update just created contact:
 ####
-    $ curl -X PUT -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d contact[first_name]="Jack" https://beyondvip.com/api/v1/contacts/34659.json
+    $ curl -X PUT -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d contact[first_name]="Jack" https://app.beyondvip.com/api/v1/contacts/34659.json
 ####
 
 Request last changes:
 ####
     $ # request 3
-    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d start_date="2014-03-03T16:38:38GMT+01:00" https://beyondvip.com/api/v1/last_changes.json
+    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d start_date="2014-03-03T16:38:38GMT+01:00" https://app.beyondvip.com/api/v1/last_changes.json
 ####
 
 Response should like the following:
@@ -238,11 +238,11 @@ Notice 2: Although just one contact field was updated, the response contained wh
 
 Let's destroy our contact and request changes again:
 ####
-    $ curl -X DELETE -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw https://beyondvip.com/api/v1/contacts/34659.json
+    $ curl -X DELETE -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw https://app.beyondvip.com/api/v1/contacts/34659.json
 ####
 ####
     $ # request 4
-    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d start_date="2014-03-03T16:38:38GMT+01:00" https://beyondvip.com/api/v1/last_changes.json
+    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d start_date="2014-03-03T16:38:38GMT+01:00" https://app.beyondvip.com/api/v1/last_changes.json
 ####
 
 Response:
@@ -353,7 +353,7 @@ Usually mobile apps take parameter value from 'Last Changes' response related pr
 
 Example of using:
 ####
-    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d start_date="2014-03-03T16:38:38GMT+01:00" https://beyondvip.com/api/v1/last_changes.json
+    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d start_date="2014-03-03T16:38:38GMT+01:00" https://app.beyondvip.com/api/v1/last_changes.json
 ####
 
 #### options
@@ -365,11 +365,11 @@ It is written in the following way:
 
 Example of using:
 ####
-    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d options[Contact][start_date]="2014-03-03 05:29:17 +0000" https://beyondvip.com/api/v1/last_changes.json
+    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d options[Contact][start_date]="2014-03-03 05:29:17 +0000" https://app.beyondvip.com/api/v1/last_changes.json
 ####
 It is possible to request changes from different classes together. In this case [start_date] sub-parameters are independent from each other:
 ####
-    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d options[ContactQualification][start_date]="2014-03-03 05:29:17 +0000" -d options[Notification][start_date]="2014-03-04 05:00:00 +0000"  https://beyondvip.com/api/v1/last_changes.json
+    $ curl -X GET -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d options[ContactQualification][start_date]="2014-03-03 05:29:17 +0000" -d options[Notification][start_date]="2014-03-04 05:00:00 +0000"  https://app.beyondvip.com/api/v1/last_changes.json
 ####
 
 
@@ -400,7 +400,7 @@ Notice: client should push acknowledgment before first 'Last Changes' request.
 
 Request example:
 ####
-    curl -X POST -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d timestamp="2014-03-04 05:29:17 +0000" https://beyondvip.com/api/v1/last_changes/acknowledgment.json
+    curl -X POST -d auth_token=Dyn1vbWt7Hhy1O-Elo6eSw -d timestamp="2014-03-04 05:29:17 +0000" https://app.beyondvip.com/api/v1/last_changes/acknowledgment.json
 ####
 
 Response:

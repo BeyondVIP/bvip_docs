@@ -17,7 +17,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/profile.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/profile.json
 
 ### Update avatar
     url: /api/v1/profile
@@ -35,7 +35,7 @@
 
   Example
 
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d avatar=<file> https://beyondvip.com/api/v1/profile.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d avatar=<file> https://app.beyondvip.com/api/v1/profile.json
 
 ### Get sign up flag
     url: /api/v1/profile/signup_flag
@@ -52,7 +52,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/profile/signup_flag.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/profile/signup_flag.json
 
 ### Set sign up flag
     url: /api/v1/profile/signup_flag
@@ -69,4 +69,4 @@
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/profile/signup_flag.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/profile/signup_flag.json

@@ -27,7 +27,7 @@ Event Shift Note entity represents short description or comment for [event](/api
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d event_id=123 https://beyondvip.com/api/v1/event_shift_notes.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d event_id=123 https://app.beyondvip.com/api/v1/event_shift_notes.json
 
 ### Get
     url: /api/v1/event_shift_notes/:id(.:format)
@@ -44,7 +44,7 @@ Event Shift Note entity represents short description or comment for [event](/api
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/event_shift_notes/1.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/event_shift_notes/1.json
 
 ### Create event shift note
     url: /api/v1/event_shift_notes(.:format)
@@ -65,7 +65,7 @@ Event Shift Note entity represents short description or comment for [event](/api
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d event_shift_note[description]=Text -d event_shift_note[event_id]=123 https://beyondvip.com/api/v1/event_shift_notes.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d event_shift_note[description]=Text -d event_shift_note[event_id]=123 https://app.beyondvip.com/api/v1/event_shift_notes.json
 
 ### Update event shift note
     url: /api/v1/event_shift_notes/:id(.:format)
@@ -85,7 +85,7 @@ Event Shift Note entity represents short description or comment for [event](/api
 
   Example
 
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d event_shift_note[description]=Text https://beyondvip.com/api/v1/event_shift_notes/2.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d event_shift_note[description]=Text https://app.beyondvip.com/api/v1/event_shift_notes/2.json
 
 ### Delete note
     url: /api/v1/event_shift_notes/:id(.:format)
@@ -98,4 +98,4 @@ Event Shift Note entity represents short description or comment for [event](/api
 
   Example
 
-    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/event_shift_notes/2.json
+    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/event_shift_notes/2.json

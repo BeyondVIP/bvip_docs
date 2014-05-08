@@ -18,7 +18,7 @@
 
   Example
 
-    $ curl -X GET https://beyondvip.com/api/v1/dictionaries.json
+    $ curl -X GET https://app.beyondvip.com/api/v1/dictionaries.json
 
 ### Get
     url: /api/v1/dictionaries/:key(.:format)
@@ -31,4 +31,4 @@
 
   Example:
 
-    $ curl -X GET https://beyondvip.com/api/v1/dictionaries/ethnicities.json
+    $ curl -X GET https://app.beyondvip.com/api/v1/dictionaries/ethnicities.json

@@ -117,7 +117,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/guestlists/past.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/guestlists/past.json
 
 ### Get
     url: /api/v1/guestlists/:id(.:format)
@@ -134,7 +134,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/guestlists/1.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/guestlists/1.json
 
 ### Create
     url: /api/v1/guestlists(.:format)
@@ -183,7 +183,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d guestlist[event_id]=19 -d guestlist[count_males]=1 -d guestlist[count_females]=1 -d guestlist[type_for_males_id]=1 -d guestlist[type_for_females_id]=2 https://beyondvip.com/api/v1/guestlists.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d guestlist[event_id]=19 -d guestlist[count_males]=1 -d guestlist[count_females]=1 -d guestlist[type_for_males_id]=1 -d guestlist[type_for_females_id]=2 https://app.beyondvip.com/api/v1/guestlists.json
 
 ### Update
     url: /api/v1/guestlists/:id(.:format)
@@ -213,7 +213,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
 
   Example
 
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d guestlist[count_males]=2 https://beyondvip.com/api/v1/guestlists/2.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d guestlist[count_males]=2 https://app.beyondvip.com/api/v1/guestlists/2.json
 
 ### Delete
     url: /api/v1/guestlists/:id
@@ -230,7 +230,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
 
   Example
 
-    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/guestlists/2.json
+    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/guestlists/2.json
 
 ### Available statuses
     url: /api/v1/guestlists/available_statuses(.:format)
@@ -251,7 +251,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/guestlists/available_statuses.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/guestlists/available_statuses.json
 
 ### List of guestlist types
     url: api/v1/guestlist_types(.:format)
@@ -270,4 +270,4 @@ Please note - you couldn't create 2 guestlists for the same contact and the
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/guestlists/guestlist_types.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/guestlists/guestlist_types.json

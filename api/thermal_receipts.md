@@ -35,7 +35,7 @@ Thermal Receipt represents what fields of reservations should be printed. They
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/thermal_receipts.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/thermal_receipts.json
 
 ### Get
     url: /api/v1/thermal_receipts/:id(.:format)
@@ -52,7 +52,7 @@ Thermal Receipt represents what fields of reservations should be printed. They
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/thermal_receipts/1.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/thermal_receipts/1.json
 
 ### Get by venue
     url: /api/v1/venues/:venue_id/thermal_receipt(.:format)
@@ -69,7 +69,7 @@ Thermal Receipt represents what fields of reservations should be printed. They
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/venues/1/thermal_receipt.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/venues/1/thermal_receipt.json
 
 ### Create
     url: /api/v1/thermal_receipts(.:format)
@@ -91,7 +91,7 @@ Thermal Receipt represents what fields of reservations should be printed. They
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d thermal_receipt[venue_id]=1 -d thermal_receipt[fields][]=venue_name https://beyondvip.com/api/v1/thermal_receipts.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d thermal_receipt[venue_id]=1 -d thermal_receipt[fields][]=venue_name https://app.beyondvip.com/api/v1/thermal_receipts.json
 
 ### Update
     url: /api/v1/thermal_receipts/:id(.:format)
@@ -113,4 +113,4 @@ Thermal Receipt represents what fields of reservations should be printed. They
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d thermal_receipt[fields][]=venue_logo https://beyondvip.com/api/v1/thermal_receipts/1.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d thermal_receipt[fields][]=venue_logo https://app.beyondvip.com/api/v1/thermal_receipts/1.json

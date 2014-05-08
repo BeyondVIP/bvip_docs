@@ -128,7 +128,7 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d date_start="2014-01-01" https://beyondvip.com/api/v1/events.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d date_start="2014-01-01" https://app.beyondvip.com/api/v1/events.json
 
 ### List of events (lite)
     url: /api/v1/events/lite(.:format)
@@ -166,7 +166,7 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d date_start="2014-01-01" https://beyondvip.com/api/v1/events/lite.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d date_start="2014-01-01" https://app.beyondvip.com/api/v1/events/lite.json
 
 ### Event. List of rooms
     url: /api/v1/events/:id/rooms(.:format)
@@ -183,7 +183,7 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/events/19/rooms.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/events/19/rooms.json
 
 ### Event. List of sections
     url: /api/v1/events/:id/sections(.:format)
@@ -200,7 +200,7 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/events/19/sections.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/events/19/sections.json
 
 ### All sections
     url: /api/v1/events/sections(.:format)
@@ -225,7 +225,7 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/events/sections.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/events/sections.json
 
 ### Event. List of tables
     url: /api/v1/events/:id/tables(.:format)
@@ -242,7 +242,7 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/events/19/tables.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/events/19/tables.json
 
 ### Event. All tables
     url: /api/v1/events/tables(.:format)
@@ -268,7 +268,7 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/events/tables.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/events/tables.json
 
 ### All guestlist types
     url: api/v1/events/:id/types
@@ -285,7 +285,7 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/events/19/types.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/events/19/types.json
 
 ### Log sharing
     url: api/v1/events/:id/share_log
@@ -302,4 +302,4 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/events/19/share_log.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/events/19/share_log.json

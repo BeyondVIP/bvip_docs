@@ -7,7 +7,7 @@ Firstly go to web application settings and get authentication key ('auth_token')
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/contacts.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/contacts.json
 
 ## User based authentication
 ### Sign in
@@ -36,7 +36,7 @@ Firstly go to web application settings and get authentication key ('auth_token')
 
   Example
 
-    $ curl -X POST -d email=admin@beyondvip.com -d password=password -d device_token=324628746283682634 -d mobile_os=ios https://beyondvip.com/api/v1/tokens.json
+    $ curl -X POST -d email=admin@beyondvip.com -d password=password -d device_token=324628746283682634 -d mobile_os=ios https://app.beyondvip.com/api/v1/tokens.json
 
 ### Destroy token
     url: /api/v1/tokens/:user_id(.:format)
@@ -55,7 +55,7 @@ Firstly go to web application settings and get authentication key ('auth_token')
 
   Example
 
-    $ curl -X DELETE -d auth_token=4RhR6aDOzHyyqHC8BAbYfA https://beyondvip.com/api/v1/tokens/1.json
+    $ curl -X DELETE -d auth_token=4RhR6aDOzHyyqHC8BAbYfA https://app.beyondvip.com/api/v1/tokens/1.json
 
 ### Send reset password instructions
     url: /api/v1/tokens/reset(.:format)
@@ -73,7 +73,7 @@ Firstly go to web application settings and get authentication key ('auth_token')
 
   Example
 
-    $ curl -X POST -d email=admin@beyondvip.com https://beyondvip.com/api/v1/tokens/reset.json
+    $ curl -X POST -d email=admin@beyondvip.com https://app.beyondvip.com/api/v1/tokens/reset.json
 
 ### Send phone verification
     url: /api/v1/settings/send_phone_verification(.:format)
@@ -92,7 +92,7 @@ Firstly go to web application settings and get authentication key ('auth_token')
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d phone="(123)456-7890" https://beyondvip.com/api/v1/settings/send_phone_verification.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d phone="(123)456-7890" https://app.beyondvip.com/api/v1/settings/send_phone_verification.json
 
 ### Verify phone
     url: /api/v1/settings/verify_phone(.:format)
@@ -111,4 +111,4 @@ Firstly go to web application settings and get authentication key ('auth_token')
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d token=1988 https://beyondvip.com/api/v1/settings/verify_phone.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d token=1988 https://app.beyondvip.com/api/v1/settings/verify_phone.json

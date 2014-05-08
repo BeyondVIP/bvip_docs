@@ -22,4 +22,4 @@
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d push_token[token]=1234 -d push_token[device_id]=1234 https://beyondvip.com/api/v1/push_tokens.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d push_token[token]=1234 -d push_token[device_id]=1234 https://app.beyondvip.com/api/v1/push_tokens.json

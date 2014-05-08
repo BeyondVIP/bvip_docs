@@ -148,7 +148,7 @@ Please note - you couldn't create 2 reservations for the same contact and the
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d event_id=9 https://beyondvip.com/api/v1/reservations/past.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d event_id=9 https://app.beyondvip.com/api/v1/reservations/past.json
 
 ### Get
     url: /api/v1/reservations/:id(.:format)
@@ -165,7 +165,7 @@ Please note - you couldn't create 2 reservations for the same contact and the
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/reservations/259.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/reservations/259.json
 
 ### Create
     url: /api/v1/reservations(.:format)
@@ -229,7 +229,7 @@ Please note - you couldn't create 2 reservations for the same contact and the
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d reservation[event_id]=9 -d reservation[status]=lead https://beyondvip.com/api/v1/reservations.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d reservation[event_id]=9 -d reservation[status]=lead https://app.beyondvip.com/api/v1/reservations.json
 
 ### Update
     url: /api/v1/reservations/:id(.:format)
@@ -274,7 +274,7 @@ Please note - you couldn't create 2 reservations for the same contact and the
 
   Example
 
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d reservation[status]=prospect https://beyondvip.com/api/v1/reservations/259.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d reservation[status]=prospect https://app.beyondvip.com/api/v1/reservations/259.json
 
 ### Remove
     url: /api/v1/reservations/:id(.:format)
@@ -287,7 +287,7 @@ Please note - you couldn't create 2 reservations for the same contact and the
 
   Example
 
-    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/reservations/259.json
+    $ curl -X DELETE -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/reservations/259.json
 
 #### [**Get Staff**](/api/users.md)
 #### [**Edit Notes**](/api/notes.md)
@@ -295,11 +295,11 @@ Please note - you couldn't create 2 reservations for the same contact and the
 ### Examples
 
 #### Notes adding
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d reservation[event_id]=9 -d reservation[status]=lead -d reservation[notes][]="New Note" https://beyondvip.com/api/v1/reservations.json
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d reservation[notes][]="New Note" https://beyondvip.com/api/v1/reservations/259.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d reservation[event_id]=9 -d reservation[status]=lead -d reservation[notes][]="New Note" https://app.beyondvip.com/api/v1/reservations.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d reservation[notes][]="New Note" https://app.beyondvip.com/api/v1/reservations/259.json
 
 #### Originator changing
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d reservation[originator_id]=2 https://beyondvip.com/api/v1/reservations/259.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d reservation[originator_id]=2 https://app.beyondvip.com/api/v1/reservations/259.json
 
 #### Table requesting
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d reservation[requested_table_ids][]=1 https://beyondvip.com/api/v1/reservations/259.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d reservation[requested_table_ids][]=1 https://app.beyondvip.com/api/v1/reservations/259.json

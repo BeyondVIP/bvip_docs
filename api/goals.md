@@ -48,7 +48,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 -d method=monthly https://beyondvip.com/api/v1/goals/all.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 -d method=monthly https://app.beyondvip.com/api/v1/goals/all.json
 
 ### Sales goals
     url: /api/v1/goals/sales(.:format)
@@ -68,7 +68,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 -d method=monthly https://beyondvip.com/api/v1/goals/sales.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 -d method=monthly https://app.beyondvip.com/api/v1/goals/sales.json
 
 ### Task goals
     url: /api/v1/goals/tasks(.:format)
@@ -90,7 +90,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 -d goal_type=new_contacts -d method=monthly https://beyondvip.com/api/v1/goals/tasks.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 -d goal_type=new_contacts -d method=monthly https://app.beyondvip.com/api/v1/goals/tasks.json
 
 ### Get goals by goal type
     url: /api/v1/goals/get(.:format)
@@ -112,7 +112,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 -d goal_type=sales -d method=monthly https://beyondvip.com/api/v1/goals/get.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 -d goal_type=sales -d method=monthly https://app.beyondvip.com/api/v1/goals/get.json
 
 ### Get goals by event
     url: /api/v1/goals/events(.:format)
@@ -130,4 +130,4 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d event_id=19 https://beyondvip.com/api/v1/goals/events.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d event_id=19 https://app.beyondvip.com/api/v1/goals/events.json

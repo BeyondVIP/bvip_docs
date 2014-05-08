@@ -27,7 +27,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/notifications/all.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/notifications/all.json
 
 ### Get current user's notifications for last 2 weeks
     url: /api/v1/notifications/list(.:format)
@@ -44,7 +44,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/notifications/list.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/notifications/list.json
 
 ### Get current user's unread notifications for last 2 weeks
     url: /api/v1/notifications/unread(.:format)
@@ -61,7 +61,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/notifications/unread.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/notifications/unread.json
 
 ### Get current user's unread last 2 weeks notifications count
     url: /api/v1/notifications/unread_count(.:format)
@@ -78,7 +78,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://beyondvip.com/api/v1/notifications/unread_count.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/notifications/unread_count.json
 
 ### Mark notifications as "read"
     url: /api/v1/notifications(.:format)
@@ -96,4 +96,4 @@
 
   Example
 
-    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d ids[]=933 https://beyondvip.com/api/v1/notifications.json
+    $ curl -X PUT -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d ids[]=933 https://app.beyondvip.com/api/v1/notifications.json

@@ -24,7 +24,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 https://beyondvip.com/api/v1/leaderboard/sales.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 https://app.beyondvip.com/api/v1/leaderboard/sales.json
 
 ### Contacts leaderboard
     url: /api/v1/leaderboard/contacts(.:format)
@@ -43,7 +43,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 https://beyondvip.com/api/v1/leaderboard/contacts.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 https://app.beyondvip.com/api/v1/leaderboard/contacts.json
 
 ### Tasks leaderboard
     url: /api/v1/leaderboard/tasks(.:format)
@@ -62,7 +62,7 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 https://beyondvip.com/api/v1/leaderboard/tasks.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 https://app.beyondvip.com/api/v1/leaderboard/tasks.json
 
 ### Guestlists leaderboard
     url: /api/v1/leaderboard/guestlists(.:format)
@@ -81,4 +81,4 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 https://beyondvip.com/api/v1/leaderboard/guestlists.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 https://app.beyondvip.com/api/v1/leaderboard/guestlists.json

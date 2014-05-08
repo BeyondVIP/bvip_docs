@@ -32,4 +32,4 @@
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 https://beyondvip.com/api/v1/dashboard/get.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d year=2013 -d month=12 https://app.beyondvip.com/api/v1/dashboard/get.json
