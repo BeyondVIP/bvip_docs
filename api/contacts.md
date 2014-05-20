@@ -201,7 +201,10 @@ You can create [reservations](/api/reservations.md),
     {contact#HASH}
     // or if contact's email or phone are found in system:
     {
-      message: "The (insert email or phone number here) you entered is already associated with (insert contact name here) owned by (owner or owners here)."
+      message: "Email (insert email here) and phone (insert phone here) are already in use by (insert contact name here)." // if email and phone are found
+      message: "Email (insert email here) is already in use by (insert contact name here)." // if only email is found
+      message: "Phone (insert phone here) is already in use by (insert contact name here)." // if only phone is found
+
       contact: {contact#HASH}
     }
 
@@ -263,6 +266,20 @@ You can create [reservations](/api/reservations.md),
   Response
 
     {contact#HASH}
+    // or if contact's email or phone are found in system:
+    {
+
+      // if email and phone are found
+      message: "Invalid contact attributes. Email (insert email here) is already in use by (insert contact name here) who is owned by (insert contact owner name here) so you can not own this contact, Phone (insert phone here) is already in use by (insert contact name here) who is owned by (insert contact owner name here) so you can not own this contact"
+
+      // if only email is found
+      message: "Invalid contact attributes. Email (insert email here) is already in use by (insert contact name here) who is owned by (insert contact owner name here) so you can not own this contact"
+
+      // if only phone is found
+      message: "Invalid contact attributes. Phone (insert phone here) is already in use by (insert contact name here) who is owned by (insert contact owner name here) so you can not own this contact"
+
+      contact: {contact#HASH}
+    }
 
   Example
 
