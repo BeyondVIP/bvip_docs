@@ -108,6 +108,22 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
       tables: [{table#HASH}, ...],
       available_guestlist_types: [{guestlist_type#HASH}, ...]
       reservation_rooms: [{reservation_room#HASH}]
+    }
+
+#### {lite-event#HASH}
+    {
+      id: integer,
+      venue_id: integer,
+      name: string,
+      date: datetime,
+      location: string,
+      poster_url: string,
+      poster_small_url: string,
+      poster_medium_url: string,
+      poster_list_thumb_url: string,
+      poster_preview_thumb_url: string,
+      poster_mobile_thumb_url: string
+    }
 
 ### List
     url: /api/v1/events(.:format)
@@ -122,52 +138,19 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
     event_ids: array of integers // optional
     venue_id: integer // optional
     state: {state#STRING} // optional
+    lite: 'true' //optional
 
   Response
 
     [{event#HASH}, ...]
 
+  Response for lite: true
+
+    [{lite-event#HASH}, ...]
+
   Example
 
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d date_start="2014-01-01" https://app.beyondvip.com/api/v1/events.json
-
-### List of events (lite)
-    url: /api/v1/events/lite(.:format)
-    format: json
-    method: GET
-
-  Request
-
-    auth_token: string
-    date_start: string // optional, format: "YYYY-MM-DD"
-    date_end: string // optional, format: "YYYY-MM-DD"
-    event_ids: array of integers // optional
-
-  Response
-
-    [
-      {
-        id: integer,
-        venue_id: integer,
-        name: string,
-        date: datetime,
-        location: string,
-        dress_code: string,
-        age: string,
-        description: text,
-        poster_url: string,
-        poster_mobile_thumb_url: string,
-        section_ids: array of integers,
-        table_ids: array of integers,
-        artists: [{artist#HASH}, ...],
-        guestlist_type_ids: array of integers
-      },
-      ...
-    ]
-
-  Example
-
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d date_start="2014-01-01" https://app.beyondvip.com/api/v1/events/lite.json
 
 ### Event. List of rooms
     url: /api/v1/events/:id/rooms(.:format)
