@@ -11,8 +11,8 @@ Event entity represents that some event takes place at specified
 **tables** field shows tables of event, they can be used when creating
  [reservations](/api/reservations.md)
 
-**available_guestlist_types** field shows which guestlist type can be specified
- on [guestlist](/api/guestlists.md) creation.
+**guestlist_types** field shows what guestlist types can be specified for males
+ and females on [guestlist](/api/guestlists.md) creation.
 
 Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
  blue: '#42aaff', green: '#0bda51', yellow: '#ffff00'
@@ -67,10 +67,9 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
     {
       id: integer,
       name: string,
-      price_males: float,
-      price_females: float,
-      count_males: integer,
-      count_females: integer,
+      price_per_person: float,
+      person_count: integer,
+      gender_type: string,
       default: boolean,
       guestlist_template_id: integer
     }
@@ -106,7 +105,7 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
       artists: [{artist#HASH}, ...]
       sections: [{section#HASH}, ...],
       tables: [{table#HASH}, ...],
-      available_guestlist_types: [{guestlist_type#HASH}, ...]
+      guestlist_types: [{guestlist_type#HASH}, ...]
       reservation_rooms: [{reservation_room#HASH}]
     }
 
