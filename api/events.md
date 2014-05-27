@@ -152,6 +152,23 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
 
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d date_start="2014-01-01" https://app.beyondvip.com/api/v1/events.json
 
+### Show
+    url: /api/v1/events/:id(.:format)
+    format: json
+    method: GET
+
+  Request
+
+    auth_token: string
+
+  Response
+
+    {event#HASH}
+
+  Example
+
+    $ curl -X GET -d auth_token=eoAGyfGfTthhmBDzi6uSYQ  https://app.beyondvip.com/api/v1/events/1220.json
+
 ### Event. List of rooms
     url: /api/v1/events/:id/rooms(.:format)
     format: json
