@@ -261,7 +261,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/guestlists/available_statuses.json
 
 ### List of guestlist types
-    url: api/v1/guestlist_types(.:format)
+    url: api/v2/guestlist_types(.:format)
     format: json
     method: GET
 
@@ -277,4 +277,4 @@ Please note - you couldn't create 2 guestlists for the same contact and the
 
   Example
 
-    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/guestlists/guestlist_types.json
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v2/guestlist_types.json
