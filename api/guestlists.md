@@ -18,10 +18,14 @@ Please note - you couldn't create 2 guestlists for the same contact and the
 **type_for_females_id** and **type_for_males_id** show which guestlist types are
  chosen for guestlist.
 
-**count_males** and **count_females** at guestlist_type limits guestlist male
+**price_males** and **price_females** at guestlist_type show prices for males
+ and females. If values are null then guestlist_type is unavailable for this
+ event.
+
+**count_males** and **count_females** at guestlist_type limit guestlist male
  and female counts.
 
-**total_count_males** and **total_count_females** at guestlist_type limits
+**total_count_males** and **total_count_females** at guestlist_type limit
  guestlist total male and total female counts for event.
 
 #### {tense#STRING}
