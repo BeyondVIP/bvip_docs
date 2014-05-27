@@ -18,7 +18,11 @@ Please note - you couldn't create 2 guestlists for the same contact and the
 **type_for_females_id** and **type_for_males_id** show which guestlist types are
  chosen for guestlist.
 
-**person_count** at guestlist_type limits guestlist male and female counts.
+**count_males** and **count_females** at guestlist_type limits guestlist male
+ and female counts.
+
+**total_count_males** and **total_count_females** at guestlist_type limits
+ guestlist total male and total female counts for event.
 
 #### {tense#STRING}
     'past', 'upcoming'
@@ -92,9 +96,12 @@ Please note - you couldn't create 2 guestlists for the same contact and the
     {
       id: integer,
       name: string,
-      price_per_person: float,
-      person_count: integer,
-      gender_type: string,
+      price_males: float,
+      price_females: float,
+      count_males: integer,
+      count_females: integer,
+      total_count_males: integer,
+      total_count_females: integer,
       default: boolean,
       guestlist_template_id: integer
     }

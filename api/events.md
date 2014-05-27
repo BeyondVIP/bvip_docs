@@ -67,9 +67,12 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
     {
       id: integer,
       name: string,
-      price_per_person: float,
-      person_count: integer,
-      gender_type: string,
+      price_males: float,
+      price_females: float,
+      count_males: integer,
+      count_females: integer,
+      total_count_males: integer,
+      total_count_females: integer,
       default: boolean,
       guestlist_template_id: integer
     }
