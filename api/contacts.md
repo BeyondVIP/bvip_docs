@@ -135,6 +135,7 @@ You can create [reservations](/api/reservations.md),
     method: GET
 
   Description
+  
     Pull all company contacts page-by-page (page size is 200 contacts)
 
   Request
