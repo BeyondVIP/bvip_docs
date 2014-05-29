@@ -129,7 +129,23 @@ You can create [reservations](/api/reservations.md),
 
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/contacts.json
 
-  Pull all updated contacts: [sample script](/pull_contacts.rb)
+###  Pull all updated contacts
+    url: /api/v1/contacts(.:format)
+    format: json
+    method: GET
+
+  Description
+    Pull all company contacts page-by-page (page size is 200 contacts)
+
+  Request
+
+    auth_token: string
+    updated_since: string // optional, format: "YYYY-MM-DD"
+    page: integer
+
+  Example
+
+    [sample script](/pull_contacts.rb)
 
 ### Get
     url: /api/v1/contacts/:id(.:format)
