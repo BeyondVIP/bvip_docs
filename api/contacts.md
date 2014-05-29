@@ -144,7 +144,7 @@ You can create [reservations](/api/reservations.md),
     updated_since: string // optional, format: "YYYY-MM-DD"
     page: integer
 
-  Example [sample script](/pull_contacts.rb)
+  Example: [script](/pull_contacts.rb)
 
 ### Get
     url: /api/v1/contacts/:id(.:format)
