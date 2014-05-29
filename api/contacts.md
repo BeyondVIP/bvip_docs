@@ -118,6 +118,8 @@ You can create [reservations](/api/reservations.md),
 
     auth_token: string
     ids: array of integers // optional. Find by given ids
+    updated_since: string // optional, format: "YYYY-MM-DD"
+    page: integer // optional
 
   Response
 
