@@ -52,7 +52,7 @@
 
   Example
 
-    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d tally[event_id]=1 -d tally[user_id]=1 -d tally[type_for_males_id]=1 -d tally[type_for_females_id]=1 -d tally[actual_count_males]=1 -d tally[actual_count_females]=1 https://app.beyondvip.com/api/v1/tallies/1.json
+    $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d tally[event_id]=1 -d tally[user_id]=1 -d tally[type_for_males_id]=1 -d tally[type_for_females_id]=1 -d tally[actual_count_males]=1 -d tally[actual_count_females]=1 https://app.beyondvip.com/api/v1/tallies.json
 
 ### Update
     url: /api/v1/tallies/:id(.:format)
