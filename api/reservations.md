@@ -78,6 +78,7 @@ Please note - you couldn't create 2 reservations for the same contact and the
         title: string,
         organization: string,
         avatar: string,
+        avatar_mobile_thumb_url: string,
         facebook: string,
         twitter: string,
         email: string,
@@ -187,7 +188,7 @@ Please note - you couldn't create 2 reservations for the same contact and the
       name: string,
       email: string, // optional, if originator is promoter
       phone: string, // optional, if originator is promoter
-      originator_id, // optional, id of creater, if creater is not current user
+      originator_id, // optional, id of creator, if creator is not current user
       contact_owners: [ // change contact owners at particular venue
         {
           venue_id: integer,
