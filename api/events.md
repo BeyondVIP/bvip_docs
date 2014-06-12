@@ -295,7 +295,8 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
 
   Request
 
-    auth_token: string
+    auth_token: string,
+    social_network_name: string //optional
 
   Response
 
