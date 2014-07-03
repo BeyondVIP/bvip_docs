@@ -2,7 +2,7 @@
 
 #### {permission_scope#HASH}
     {
-      "self" true, // optional
+      "self": true, // optional
       "home_venue": true, // OBSOLETE (use "selected_venues"), optional
       "selected_venues": array of integers // optional
     }
