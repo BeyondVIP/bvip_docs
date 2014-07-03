@@ -42,6 +42,39 @@ User is the person who works at [venues](/api/venues.md). User can own
       }
     }
 
+#### [{permissions_struct#HASH}](/api/permissions.md#permissionsstructhash)
+
+#### {profile#HASH}
+    {
+      id: integer,
+      first_name: string,
+      last_name: string,
+      email: string,
+      gender: string,
+      title: string,
+      birthdate: string, // format "YYYY-MM-DDT00:00:00-0000",
+      personalized_url: string,
+      promoter: boolean,
+      all_venues: [{venue#HASH}, ...],
+      department_name: string,
+      user_image: {
+        photo: {
+          url: string,
+          thumb_100: {
+            "url": string
+          },
+          mobile_thumb: {
+            url: string
+          },
+          thumb_200: {
+            url: string
+          }
+        }
+      },
+      permissions_struct: {permissions_struct#HASH}
+    }
+
+
 ### Index
     url: /api/v1/staff(.:format)
     format: json
