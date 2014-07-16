@@ -111,7 +111,9 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
       guestlist_types: [{guestlist_type#HASH}, ...]
       venue_name: string,
       reservation_sales: boolean,
-      guestlist_sales: boolean
+      guestlist_sales: boolean,
+      prepaid_tables: boolean
+    }
 
 ### List Events
     url: /api/public/events(.:format)
