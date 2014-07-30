@@ -30,6 +30,18 @@ You can create [reservations](/api/reservations.md),
 #### {status#STRING}
     'no_level', 'silver', 'gold', 'platinum', 'black'
 
+#### {body_type#STRING}
+    'Skinny', 'Athletic', 'Curvy', 'Muscular', 'Average'
+
+#### {hair_color#STRING}
+    'Black', 'Brunette', 'Blonde', 'Red'
+
+#### {eye_color#STRING}
+    'Brown', 'Green', 'Blue', 'Hazel'
+
+#### {height#STRING}
+    'Short', 'Average', 'Tall'
+
 #### {contact_qualification#HASH}
     {
       id: integer,
@@ -61,6 +73,12 @@ You can create [reservations](/api/reservations.md),
       region: string, // dictionary key 'locations'
       city: string, // dictionary key 'locations'
       zip: string,
+      business_phone: string,
+      business_email: string,
+      body_type: {body_type#STRING},
+      hair_color: {hair_color#STRING},
+      eye_color: {eye_color#STRING},
+      height: {height#STRING},
       facebook: string,
       twitter: string,
       instagram: string,
