@@ -305,3 +305,17 @@ Section colors can be orange: '#ff8800', red: '#dc143c', purple: '#6600ff',
   Example
 
     $ curl -X POST -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/events/19/share_log.json
+
+### Update guestlist sales
+    url: /api/v1/events/:id/update_guestlist_sales(.:format)
+    format: json
+    method: PUT
+
+  Request
+
+    auth_token: string,
+    guestlist_sales: boolean
+
+  Response
+
+    {event#HASH}
