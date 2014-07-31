@@ -3,6 +3,7 @@
 * [**Auth**](/api/tokens.md)
 * [**Dictionaries**](/api/dictionaries.md)
 * [**Profile**](/api/profile.md)
+* [**Permissions**](/api/permissions.md)
 * [**Staff**](/api/users.md)
 * [**Contacts**](/api/contacts.md)
 * [**Goals**](/api/goals.md)

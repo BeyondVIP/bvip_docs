@@ -1,6 +1,6 @@
 # Api::V1::Profile
 
-#### [{user#HASH}](/api/users.md#userhash)
+#### [{profile#HASH}](/api/users.md#profilehash)
 
 ### Get
     url: /api/v1/profile(.:format)

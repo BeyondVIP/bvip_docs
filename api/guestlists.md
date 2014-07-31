@@ -51,6 +51,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
         title: string,
         organization: string,
         avatar: string,
+        avatar_mobile_thumb_url: string,
         facebook: string,
         twitter: string,
         email: string,
@@ -155,6 +156,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
       name: string,
       email: string,
       phone: string,
+      user_id, // optional, id of creator, if creator is not current user
       contact_owners: [ // change contact owners at particular venue
         {
           venue_id: integer,
@@ -271,3 +273,26 @@ Please note - you couldn't create 2 guestlists for the same contact and the
   Example
 
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/guestlists/guestlist_types.json
+
+### Mass Create
+    url: /api/v1/guestlists/mass_create(.:format)
+    format: json
+    method: POST
+
+  Request
+
+    auth_token: string
+    originator_name: 'string'
+    mass_create_text_content: 'csv string'
+    guestlist: {
+      event_id: integer
+      type_for_females_id: integer
+      type_for_males_id:integer
+    }
+
+  For CSV string, the format should be:
+    Contact Name (both first and last name in the first column) Male Count, (second column), Female Count, (third column) Notes, (fourth column) A total of 4 columns with no titles. Each guestlist should be in its own row.
+
+  Response
+
+    [{guestlist#HASH}, ...]
