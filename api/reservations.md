@@ -227,7 +227,7 @@ Please note - you couldn't create 2 reservations for the same contact and the
 
   Response
 
-    {reservation#HASH}
+    [{reservation#HASH}, ...]
 
   Example
 

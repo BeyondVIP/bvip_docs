@@ -31,7 +31,7 @@
 
   Response
 
-    { your_data_json }
+    { data: your_data_json or '' }
 
   Example
 
