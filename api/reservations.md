@@ -142,6 +142,8 @@ Please note - you couldn't create 2 reservations for the same contact and the
     section_id: integer // optional
     contact_ids: array of integers or integer // optional
     contact_id: integer // optional
+    updated_since: string // format: "YYYY-MM-DD"
+    page: integer
 
   Response
 
@@ -150,6 +152,10 @@ Please note - you couldn't create 2 reservations for the same contact and the
   Example
 
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg -d contact_ids[]=352 -d event_id=9 https://app.beyondvip.com/api/v1/reservations/past.json
+
+  Pull reservations example
+
+    $ curl -X GET -d auth_token=5_-DRB-0jTkY1urfR1u2LA -d updated_since=2014-08-20 -d page=1  https://app.beyondvip.com/api/v1/reservations.json
 
 ### Get
     url: /api/v1/reservations/:id(.:format)
