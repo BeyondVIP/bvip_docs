@@ -123,6 +123,14 @@ You can create [reservations](/api/reservations.md),
       ]
     }
 
+#### {affiliate_contact#HASH}
+    {
+      id: integer,
+      name: string,
+      first_name: string,
+      last_name: string,
+    }
+
 #### Validations
     always required:
       first_name, email or phone
@@ -175,6 +183,12 @@ You can create [reservations](/api/reservations.md),
     join_owners: boolean // optional. If "1" then owners are included
 
   Response
+
+    If you sign in as user and contact belongs to the affiliate, you get
+
+    {affiliate_contact#HASH}
+
+    Otherwise:
 
     {contact#HASH}
 

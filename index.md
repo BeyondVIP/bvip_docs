@@ -28,3 +28,4 @@
 * [**Thermal Receipts**](/api/thermal_receipts.md)
 * [**Promoters**](/api/promoters.md)
 * [**App Settings**](/api/app_settings.md)
+* [**Affiliates**](/api/affiliate_users.md)

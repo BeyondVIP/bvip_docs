@@ -78,6 +78,7 @@ Please note - you couldn't create 2 guestlists for the same contact and the
       type_for_males_id: integer,
       updated_at: timestamp,
       user_id: integer,
+      user_type: string, // "User" or "AffiliateUser"
       event_date: timestamp,
       event_name: string,
       type_for_males_name: string,

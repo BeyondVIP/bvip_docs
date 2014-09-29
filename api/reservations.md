@@ -101,6 +101,7 @@ Please note - you couldn't create 2 reservations for the same contact and the
       minimum: float, // minimum that contact can spend during the event
       notes: [{note#HASH}, ...],
       originator_id: integer,
+      originator_type: string, // "User" or "AffiliateUser"
       party_size: integer, // count_males + count_females
       qualification: string, // contact qualification status at venue where event takes place
       referable_id: integer,
