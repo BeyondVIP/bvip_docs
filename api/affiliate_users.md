@@ -1,4 +1,4 @@
-# Api::V1::AffilaiteUsers
+# Api::V1::AffiliateUsers
 
 #### {affiliate_user#HASH}
     {
