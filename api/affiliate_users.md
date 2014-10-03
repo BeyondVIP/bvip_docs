@@ -60,3 +60,21 @@
   Example
 
     $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/affiliate_users.json
+
+### Get
+    url: /api/v1/affiliate_users/:id(.:format)
+    format: json
+    method: GET
+
+  Request
+
+    auth_token: string
+
+  Response
+
+    {affiliate_user#HASH}
+
+  Example
+
+    $ curl -X GET -d auth_token=2zLJaxqVzKJgQ0XfYIg8Wg https://app.beyondvip.com/api/v1/affiliate_users/1.json
+
